@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NELLA_SHOPP | نلا شاپ - فروشگاه تخصصی زیبایی و اکسسوری</title>
+<meta name="description" content="خرید آنلاین انواع لوازم آرایشی، مراقبت پوستی، اکسسوری و هدایای فانتزی با ارسال سریع از نلا شاپ" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --pink:#ec4899; --pink-d:#db2777; --pink-l:#fdf2f8; --pink-l2:#fce7f3; --pink-b:#f9a8d4;
+    --sky:#38bdf8; --sky-d:#0284c7; --sky-l:#f0f9ff; --sky-l2:#e0f2fe;
+    --ink:#1e293b; --muted:#64748b; --line:#f3d0e3; --bg:#faf7f9; --white:#fff;
+    --ok:#10b981; --warn:#f59e0b; --bad:#f43f5e;
+    --shadow:0 6px 24px rgba(236,72,153,.10);
+    --shadow-lg:0 18px 50px rgba(236,72,153,.18);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+  button{cursor:pointer;border:none;background:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+  .hide{display:none !important}
+
+  /* ===== Top bar ===== */
+  .topbar{background:linear-gradient(90deg,#f472b6,#f9a8d4,#7dd3fc);color:#fff;font-size:12px;font-weight:600;padding:8px 12px;text-align:center}
+  .topbar b{font-weight:900}
+
+  /* ===== Header ===== */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(236,72,153,.06)}
+  .hrow{display:flex;align-items:center;gap:14px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .logo{width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 4px 14px rgba(236,72,153,.25);border:2px solid var(--pink-b);background:var(--pink-l)}
+  .logo img{width:100%;height:100%;object-fit:cover}
+  .bname{font-size:22px;font-weight:900;color:var(--pink);letter-spacing:.5px;line-height:1.3}
+  .btag{font-size:10px;background:var(--sky-l2);color:var(--sky-d);border:1px solid #bae6fd;border-radius:6px;padding:1px 6px;font-weight:800}
+  .bsub{font-size:11px;color:var(--sky-d);font-weight:500}
+  .search{flex:1;position:relative;max-width:620px}
+  .search input{width:100%;background:#f8fafc;border:1px solid var(--pink-l2);border-radius:14px;padding:11px 42px 11px 14px;font-size:13px;outline:none;transition:.2s}
+  .search input:focus{background:#fff;border-color:var(--pink);box-shadow:0 0 0 4px var(--pink-l)}
+  .search .ic{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--pink);font-size:15px}
+  .sugg{position:absolute;top:calc(100% + 8px);right:0;left:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);padding:14px;z-index:30}
+  .sugg h5{font-size:11px;color:var(--muted);margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11px;background:var(--pink-l);color:var(--pink-d);border:1px solid var(--pink-l2);padding:5px 11px;border-radius:99px;font-weight:600}
+  .chip:hover{background:var(--pink);color:#fff}
+  .acts{display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .btn{display:inline-flex;align-items:center;gap:6px;border-radius:14px;font-weight:800;font-size:12px;padding:9px 13px;transition:.2s;white-space:nowrap}
+  .btn-pink{background:linear-gradient(90deg,var(--pink),var(--pink-d));color:#fff;box-shadow:0 6px 16px rgba(236,72,153,.28)}
+  .btn-pink:hover{transform:translateY(-1px)}
+  .btn-sky{background:var(--sky-l);color:var(--sky-d);border:1px solid #bae6fd}
+  .btn-sky:hover{background:var(--sky-l2)}
+  .btn-ghost{background:#f8fafc;color:var(--muted);border:1px solid #e2e8f0}
+  .btn-ghost:hover{background:var(--pink-l);color:var(--pink);border-color:var(--pink-l2)}
+  .btn-ok{background:linear-gradient(90deg,#10b981,#059669);color:#fff;box-shadow:0 6px 16px rgba(16,185,129,.25)}
+  .btn-block{width:100%;justify-content:center;padding:13px}
+  .cartbtn{position:relative;display:flex;align-items:center;gap:8px;background:var(--pink-l);border:1px solid var(--pink-l2);color:var(--pink-d);border-radius:14px;padding:8px 12px;font-weight:800;font-size:12px}
+  .cartbtn .badge{position:absolute;top:-7px;right:-7px;background:linear-gradient(90deg,var(--pink),#f43f5e);color:#fff;font-size:10px;font-weight:900;min-width:20px;height:20px;border-radius:99px;display:grid;place-items:center;border:2px solid #fff}
+  .mobsearch{padding:0 0 10px}
+  .mobsearch input{width:100%;background:#f8fafc;border:1px solid var(--pink-l2);border-radius:12px;padding:9px 12px;font-size:12px;outline:none}
+  nav.mainnav{background:linear-gradient(180deg,#fff,var(--pink-l));border-top:1px solid var(--pink-l2)}
+  .navin{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:7px 0;font-size:12px;font-weight:600;scrollbar-width:none}
+  .navin::-webkit-scrollbar{display:none}
+  .navin button{padding:6px 12px;border-radius:10px;color:var(--muted);white-space:nowrap}
+  .navin button:hover{background:var(--pink-l2);color:var(--pink-d)}
+  .navin button.on{background:var(--pink-l2);color:var(--pink-d);font-weight:900}
+  .navin .sep{width:1px;height:16px;background:var(--pink-b);margin:0 4px}
+
+  /* ===== Hero ===== */
+  .hero{display:grid;grid-template-columns:2fr 1fr;gap:14px;padding:16px 0}
+  .slide{position:relative;border-radius:26px;overflow:hidden;min-height:330px;border:1px solid var(--line);background:linear-gradient(90deg,#fff,var(--pink-l) 45%,var(--sky-l));display:flex;align-items:center;box-shadow:var(--shadow)}
+  .slide .txt{position:relative;z-index:3;padding:34px;max-width:56%}
+  .slide .tag{display:inline-flex;background:var(--pink);color:#fff;font-size:11px;font-weight:800;padding:4px 12px;border-radius:99px;margin-bottom:10px}
+  .slide h2{font-size:27px;font-weight:900;line-height:1.5;margin-bottom:8px}
+  .slide p{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .slide .bgim{position:absolute;left:0;top:0;bottom:0;width:50%;background-size:cover;background-position:center;opacity:.9;-webkit-mask-image:linear-gradient(to right,#000 35%,transparent 100%);mask-image:linear-gradient(to right,#000 35%,transparent 100%)}
+  .dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+  .dots i{width:8px;height:8px;border-radius:99px;background:var(--pink-b);cursor:pointer;transition:.3s}
+  .dots i.on{width:24px;background:var(--pink)}
+  .arw{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:var(--shadow);display:grid;place-items:center;color:var(--ink);z-index:5;font-size:14px}
+  .arw.l{right:12px}.arw.r{left:12px}
+  .side{display:flex;flex-direction:column;gap:14px}
+  .pcard{flex:1;border-radius:26px;padding:18px;border:1px solid #bae6fd;background:linear-gradient(135deg,var(--sky-l),#fff);display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;transition:.25s}
+  .pcard.pk{border-color:var(--pink-b);background:linear-gradient(135deg,var(--pink-l),#fff)}
+  .pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .pcard .pt{font-size:10px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--sky-l2);color:var(--sky-d)}
+  .pcard.pk .pt{background:var(--pink-l2);color:var(--pink-d)}
+  .pcard h3{font-size:15px;font-weight:900;margin:6px 0 2px}
+  .pcard span.d{font-size:11px;color:var(--muted)}
+  .pcard .em{width:60px;height:60px;border-radius:18px;background:rgba(255,255,255,.85);display:grid;place-items:center;font-size:28px;flex-shrink:0}
+
+  /* ===== Special offers ===== */
+  .offers{border-radius:26px;padding:18px;background:linear-gradient(90deg,#f472b6,var(--pink) 55%,#38bdf8);box-shadow:0 12px 30px rgba(236,72,153,.2);margin:6px 0 18px}
+  .offers .in{display:flex;gap:18px;align-items:stretch}
+  .ohead{color:#fff;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;min-width:190px;gap:12px}
+  .ohead .cicon{width:56px;height:56px;border-radius:18px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:26px;border:2px solid rgba(255,255,255,.3)}
+  .ohead h2{font-size:23px;font-weight:900;line-height:1.4}
+  .ohead small{font-size:11px;color:#fce7f3}
+  .timer{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:8px 12px;direction:ltr}
+  .timer b{background:#fff;color:var(--pink);border-radius:6px;padding:2px 6px;font-size:13px;min-width:26px;text-align:center;font-variant-numeric:tabular-nums}
+  .orow{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 6px;scrollbar-width:thin}
+  .orow::-webkit-scrollbar{height:6px}
+  .orow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.5);border-radius:99px}
+  .ocard{width:212px;flex-shrink:0;background:#fff;border-radius:20px;padding:11px;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .ocard .im{position:relative;height:150px;border-radius:14px;overflow:hidden;background:#f8fafc;margin-bottom:9px;cursor:pointer}
+  .ocard .im img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .ocard:hover .im img{transform:scale(1.06)}
+  .off{position:absolute;top:8px;right:8px;background:linear-gradient(90deg,var(--pink),#f43f5e);color:#fff;font-size:11px;font-weight:900;padding:1px 8px;border-radius:99px}
+  .ocard h4{font-size:12px;font-weight:800;line-height:1.7;height:40px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;cursor:pointer;margin-bottom:6px}
+  .ocard h4:hover{color:var(--pink)}
+  .bar{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin:4px 0 8px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink),#38bdf8);border-radius:99px}
+  .st{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:2px}
+  .st b{color:var(--pink)}
+  .price{display:flex;flex-direction:column;align-items:flex-end;margin:6px 0 10px}
+  .price s{font-size:11px;color:#94a3b8}
+  .price b{font-size:14px;color:var(--pink);font-weight:900}
+  .orow .acts2{display:flex;gap:6px;margin-top:auto;padding-top:8px;border-top:1px solid #f1f5f9}
+  .mini{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;background:var(--pink-l);color:var(--pink);font-size:11px;font-weight:800;padding:8px;border-radius:12px}
+  .mini:hover{background:var(--pink);color:#fff}
+  .eye{width:36px;background:#f8fafc;color:var(--muted);border-radius:12px;display:grid;place-items:center;font-size:13px}
+  .eye:hover{background:var(--sky-l);color:var(--sky-d)}
+
+  /* ===== Categories ===== */
+  .sec{padding:14px 0}
+  .secttl{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .secttl h2{font-size:17px;font-weight:900;display:flex;align-items:center;gap:8px}
+  .secttl h2 em{font-style:normal;font-size:20px}
+  .secttl span{font-size:11px;color:var(--muted)}
+  .cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .cat{background:#fff;border:1px solid var(--pink-l2);border-radius:20px;padding:14px 8px;text-align:center;transition:.25s}
+  .cat:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .cat.on{border-color:var(--pink);box-shadow:0 0 0 2px var(--pink-l2)}
+  .cat i{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;font-size:26px;margin:0 auto 8px;background:var(--pink-l)}
+  .cat.c1 i{background:#fff1f2}.cat.c2 i{background:var(--sky-l)}.cat.c3 i{background:#f5f3ff}.cat.c4 i{background:var(--pink-l)}.cat.c5 i{background:var(--sky-l)}
+  .cat p{font-size:12px;font-weight:800}
+  .cat:hover p{color:var(--pink)}
+
+  /* ===== Catalog toolbar ===== */
+  .toolbar{background:#fff;border:1px solid var(--line);border-radius:24px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px;box-shadow:var(--shadow)}
+  .toolbar .tt h1{font-size:16px;font-weight:900}
+  .toolbar .tt span{font-size:11px;color:var(--muted)}
+  .tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px}
+  .seg{display:flex;align-items:center;gap:2px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:3px}
+  .seg span{font-size:10px;color:#94a3b8;padding:0 6px}
+  .seg button{padding:5px 10px;border-radius:9px;font-size:11px;font-weight:700;color:var(--muted)}
+  .seg button.on{background:var(--pink);color:#fff}
+  .togg{display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px;font-weight:800;color:var(--muted)}
+  .togg.on{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+  .clr{color:var(--pink);font-weight:800;font-size:11px}
+
+  /* ===== Product grid ===== */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .p{background:#fff;border:1px solid var(--pink-l2);border-radius:24px;padding:13px;display:flex;flex-direction:column;transition:.3s;position:relative}
+  .p:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--pink-b)}
+  .p .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:10px}
+  .p .top .ct{background:var(--sky-l);color:var(--sky-d);border:1px solid #bae6fd;padding:2px 8px;border-radius:99px;font-weight:700}
+  .p .top .rt{background:#fffbeb;color:#d97706;font-weight:800;display:flex;align-items:center;gap:3px;padding:2px 6px;border-radius:6px}
+  .p .im{position:relative;height:200px;border-radius:18px;overflow:hidden;background:#f8fafc;cursor:pointer;margin-bottom:10px}
+  .p .im img{width:100%;height:100%;object-fit:cover;transition:.45s}
+  .p:hover .im img{transform:scale(1.07)}
+  .p h3{font-size:13px;font-weight:800;line-height:1.75;height:46px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;cursor:pointer;margin-bottom:6px}
+  .p h3:hover{color:var(--pink)}
+  .p .ship{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-bottom:8px}
+  .p .foot{margin-top:auto;padding-top:8px;border-top:1px solid #f1f5f9}
+  .p .pr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px}
+  .p .pr .av{font-size:10px;color:var(--muted)}
+  .p .pr .av b{color:#059669;font-weight:700}
+  .p .pr .av o{color:var(--bad);font-weight:800}
+  .p .pr .num{display:flex;flex-direction:column;align-items:flex-end}
+  .p .pr .num s{font-size:11px;color:#94a3b8}
+  .p .pr .num b{font-size:15px;color:var(--pink);font-weight:900}
+  .p .btns{display:flex;gap:8px}
+  .add{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,var(--pink),var(--pink-d));color:#fff;font-size:12px;font-weight:800;padding:11px;border-radius:14px;box-shadow:0 5px 14px rgba(236,72,153,.22)}
+  .add:hover{transform:translateY(-1px)}
+  .add.in{background:linear-gradient(90deg,#10b981,#059669)}
+  .add[disabled]{background:#f1f5f9;color:#94a3b8;box-shadow:none;cursor:not-allowed}
+  .dtl{width:42px;display:grid;place-items:center;border:1px solid var(--pink-b);color:var(--pink);border-radius:14px;font-size:14px}
+  .dtl:hover{background:var(--pink-l)}
+
+  /* ===== Empty / skeleton ===== */
+  .empty{background:#fff;border:1px solid var(--line);border-radius:24px;padding:52px 20px;text-align:center;box-shadow:var(--shadow)}
+  .empty i{font-size:40px;display:block;margin-bottom:10px}
+  .empty h3{font-size:15px;font-weight:900;margin-bottom:6px}
+  .empty p{font-size:12px;color:var(--muted);max-width:380px;margin:0 auto 14px}
+  .skel{background:#fff;border:1px solid var(--pink-l2);border-radius:24px;padding:13px}
+  .skel .a{height:200px;border-radius:18px;background:var(--pink-l);animation:pulse 1.6s infinite}
+  .skel .b{height:14px;border-radius:8px;background:#f1f5f9;margin:12px 0 8px;animation:pulse 1.6s infinite}
+  .skel .c{height:32px;border-radius:12px;background:var(--pink-l);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+  /* ===== Footer ===== */
+  footer.site{background:#fff;border-top:1px solid var(--line);margin-top:44px}
+  .frow{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--pink-l2)}
+  .frow .fb{display:flex;align-items:center;gap:10px}
+  .frow .logo{width:38px;height:38px}
+  .frow .logo{border-color:var(--pink-b)}
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 0;border-bottom:1px solid var(--pink-l2);text-align:center}
+  .trust i{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:25px;margin:0 auto 8px;background:var(--pink-l)}
+  .trust div:nth-child(even) i{background:var(--sky-l)}
+  .trust b{font-size:12px;display:block}
+  .trust span{font-size:11px;color:var(--muted)}
+  .fcols{display:grid;grid-template-columns:5fr 2fr 2fr 3fr;gap:26px;padding:26px 0}
+  .fcols h3{font-size:15px;font-weight:900;margin-bottom:10px}
+  .fcols h4{font-size:12px;font-weight:900;margin-bottom:10px}
+  .fcols p{font-size:12px;color:var(--muted);text-align:justify}
+  .fcols ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted)}
+  .fcols li:hover{color:var(--pink);cursor:pointer}
+  .fcols .meti{display:flex;gap:10px;margin-bottom:10px}
+  .fcols .meti a{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:18px;background:var(--pink-l);color:var(--pink)}
+  .fcols .meti a:last-child{background:var(--sky-l);color:var(--sky-d)}
+  .fcols .ct{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+  .copy{background:#f8fafc;text-align:center;font-size:11px;color:var(--muted);padding:14px;border-top:1px solid var(--line)}
+
+  /* ===== Modals ===== */
+  .ov{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);z-index:60;display:flex;align-items:center;justify-content:center;padding:14px;animation:fade .2s}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes up{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+  .modal{background:#fff;border-radius:26px;width:100%;max-width:860px;max-height:92vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25);animation:up .25s;border:1px solid var(--line);position:relative}
+  .modal.sm{max-width:460px}
+  .mx{position:absolute;top:14px;left:14px;width:34px;height:34px;border-radius:50%;background:#f1f5f9;display:grid;place-items:center;color:var(--muted);z-index:5}
+  .mx:hover{background:var(--pink-l);color:var(--pink)}
+  .mhead{padding:14px 22px;border-bottom:1px solid var(--pink-l2);font-size:11px;color:var(--muted);display:flex;gap:6px;align-items:center}
+  .mhead b{color:var(--pink)}
+  .pd{display:grid;grid-template-columns:5fr 7fr;gap:26px;padding:22px}
+  .pd .im{position:relative;aspect-ratio:1;border-radius:20px;overflow:hidden;background:var(--pink-l);border:1px solid var(--pink-l2)}
+  .pd .im img{width:100%;height:100%;object-fit:cover}
+  .pdbadges{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .pdbadges div{font-size:11px;padding:9px;border-radius:12px;display:flex;align-items:center;gap:7px;font-weight:600}
+  .pdbadges .a{background:var(--pink-l);color:var(--pink-d)}
+  .pdbadges .b{background:var(--sky-l);color:var(--sky-d)}
+  .pd .cat{display:inline-block;font-size:11px;background:var(--pink-l2);color:var(--pink-d);font-weight:800;padding:3px 11px;border-radius:99px}
+  .pd h1{font-size:19px;font-weight:900;line-height:1.7;margin:8px 0 12px}
+  .shop{background:linear-gradient(90deg,var(--pink-l),var(--sky-l));border:1px solid var(--pink-l2);border-radius:18px;padding:13px;display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .shop .l{display:flex;align-items:center;gap:10px}
+  .shop .ic{width:38px;height:38px;border-radius:12px;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:17px}
+  .shop b{font-size:12px;display:flex;align-items:center;gap:6px}
+  .shop small{font-size:11px;color:var(--muted)}
+  .shop .ok{font-size:10px;background:#fff;color:var(--sky-d);border:1px solid #bae6fd;padding:3px 8px;border-radius:9px;font-weight:800}
+  .flabel{font-size:12px;font-weight:800;display:block;margin-bottom:7px}
+  .clrsel{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .clrsel button{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;border:1px solid #e2e8f0;border-radius:12px;padding:6px 11px}
+  .clrsel button i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+  .clrsel button.on{border-color:var(--pink);background:var(--pink-l);color:var(--pink-d);box-shadow:0 0 0 3px var(--pink-l)}
+  .spects{margin-bottom:14px}
+  .spects li{list-style:none;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .spects li i{width:6px;height:6px;border-radius:50%;background:var(--pink-b)}
+  .spects li b{color:var(--ink)}
+  .buybox{border-top:1px solid #f1f5f9;padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+  .buybox .ship{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .buybox .num{text-align:left}
+  .buybox .num s{font-size:12px;color:#94a3b8;display:block}
+  .buybox .num b{font-size:20px;color:var(--pink);font-weight:900}
+  .tabs{border-top:1px solid var(--line);background:#fafbfd;padding:20px 22px}
+  .tabbar{display:flex;gap:4px;border-bottom:1px solid var(--pink-l2);margin-bottom:14px;flex-wrap:wrap}
+  .tabbar button{font-size:12px;font-weight:800;color:var(--muted);padding:8px 12px;border-bottom:2px solid transparent}
+  .tabbar button.on{color:var(--pink);border-color:var(--pink)}
+  .specgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .specgrid div{display:flex;justify-content:space-between;background:#f8fafc;font-size:11px;padding:9px 11px;border-radius:12px}
+  .specgrid div span:first-child{color:var(--muted)}
+  .specgrid div span:last-child{font-weight:800}
+  .descbox{background:#fff;border:1px solid var(--pink-l2);border-radius:18px;padding:16px;font-size:13px}
+  .revbox{background:#fff;border:1px solid var(--pink-l2);border-radius:18px;padding:14px;margin-bottom:10px;font-size:12px}
+  .revbox .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+  .revbox .rh b{font-size:12px}
+  .revbox .rh span{font-size:10px;color:#94a3b8}
+  .revbox p{color:var(--muted)}
+  .inrow{display:flex;gap:8px}
+  .fld{width:100%;background:#f8fafc;border:1px solid var(--pink-l2);border-radius:14px;padding:11px 13px;font-size:12px;outline:none;transition:.2s}
+  .fld:focus{border-color:var(--pink);background:#fff;box-shadow:0 0 0 3px var(--pink-l)}
+  textarea.fld{resize:vertical}
+  label.lb{font-size:12px;font-weight:800;display:block;margin-bottom:6px}
+  .note{font-size:11px;color:#94a3b8;margin-top:6px}
+  .alert{font-size:11px;font-weight:800;padding:10px 12px;border-radius:12px;margin-bottom:10px}
+  .alert.bad{background:#fff1f2;color:#be123c;border:1px solid #fecdd3}
+  .alert.ok{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+  .alert.info{background:var(--sky-l);color:var(--sky-d);border:1px solid #bae6fd}
+
+  /* ===== Cart drawer ===== */
+  .drawer{position:fixed;inset:0;background:rgba(15,23,42,.5);backdrop-filter:blur(3px);z-index:70;display:flex;justify-content:flex-start;animation:fade .2s}
+  .drawer .panel{width:100%;max-width:410px;background:#fff;height:100%;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2);animation:slidein .28s}
+  @keyframes slidein{from{transform:translateX(-100%)}to{transform:none}}
+  .dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,var(--pink-l),#fff)}
+  .dhead h3{font-size:15px;font-weight:900}
+  .dhead small{font-size:11px;color:var(--muted)}
+  .dhead .l{display:flex;align-items:center;gap:10px}
+  .dhead .ic{width:36px;height:36px;border-radius:12px;background:var(--pink-l2);color:var(--pink);display:grid;place-items:center;font-size:16px}
+  .freeship{background:linear-gradient(90deg,var(--pink-l),var(--sky-l));padding:11px 16px;font-size:11px;border-bottom:1px solid var(--line)}
+  .freeship .t{display:flex;justify-content:space-between;font-weight:800;margin-bottom:6px}
+  .freeship .t b{color:var(--pink)}
+  .freeship .bar{background:var(--pink-l2)}
+  .dbody{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+  .citem{display:flex;gap:10px;align-items:center;background:#f8fafc;border:1px solid var(--pink-l2);border-radius:18px;padding:10px}
+  .citem img{width:62px;height:62px;border-radius:14px;object-fit:cover;border:1px solid var(--pink-l2)}
+  .citem .ci{flex:1;min-width:0}
+  .citem h5{font-size:11px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .citem .cl{font-size:10px;background:#fff;border:1px solid var(--pink-l2);color:var(--pink-d);padding:1px 6px;border-radius:6px;font-weight:700}
+  .citem .cp{font-size:12px;font-weight:900;color:var(--pink);margin-top:3px}
+  .qty{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .qty .b{display:flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--pink-b);border-radius:10px;padding:2px}
+  .qty .b button{width:22px;height:22px;border-radius:7px;color:var(--pink);font-size:13px;display:grid;place-items:center}
+  .qty .b button:hover{background:var(--pink-l)}
+  .qty .b span{font-size:12px;font-weight:900;min-width:18px;text-align:center}
+  .qty .rm{font-size:10px;color:#94a3b8}
+  .qty .rm:hover{color:var(--bad)}
+  .dfoot{padding:14px 16px;border-top:1px solid var(--line);background:#fff}
+  .sumrow{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px}
+  .sumrow.tot{font-size:14px;font-weight:900;color:var(--ink);border-top:1px solid #f1f5f9;padding-top:8px}
+  .sumrow.tot b{color:var(--pink)}
+  .sumrow.disc{color:#059669;font-weight:800}
+  .emptycart{text-align:center;padding:44px 18px}
+  .emptycart i{font-size:44px;display:block;margin-bottom:10px;opacity:.5}
+  .emptycart h4{font-size:14px;font-weight:900;margin-bottom:6px}
+  .emptycart p{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .success{text-align:center;padding:26px 14px}
+  .success i{width:66px;height:66px;border-radius:50%;background:#d1fae5;color:#059669;display:grid;place-items:center;font-size:32px;margin:0 auto 14px}
+  .success h3{font-size:17px;font-weight:900;margin-bottom:8px}
+  .success p{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .ticket{background:var(--pink-l);border:1px solid var(--pink-l2);border-radius:18px;padding:14px;margin-top:10px}
+  .ticket h5{font-size:12px;font-weight:900;margin-bottom:9px}
+  .okpill{background:#ecfdf5;color:#047857;font-size:11px;font-weight:900;padding:8px;border-radius:12px;text-align:center}
+
+  /* ===== Support widget ===== */
+  .fab{position:fixed;bottom:20px;left:20px;z-index:50;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#38bdf8);color:#fff;font-size:24px;display:grid;place-items:center;box-shadow:0 12px 30px rgba(236,72,153,.4);border:2px solid #fff}
+  .fab:hover{transform:scale(1.08)}
+  .chat{position:fixed;bottom:86px;left:18px;z-index:65;width:min(360px,92vw);height:470px;background:#fff;border:1px solid var(--pink-b);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;animation:up .25s}
+  .chat .ch{background:linear-gradient(90deg,#f472b6,var(--pink),#38bdf8);color:#fff;padding:13px 15px;display:flex;align-items:center;justify-content:space-between}
+  .chat .ch .l{display:flex;align-items:center;gap:9px}
+  .chat .ch .ic{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:17px}
+  .chat .ch b{font-size:13px;display:block}
+  .chat .ch small{font-size:10px;display:flex;align-items:center;gap:5px}
+  .chat .ch small i{width:7px;height:7px;border-radius:50%;background:#4ade80;display:inline-block}
+  .msgs{flex:1;overflow-y:auto;padding:14px;background:#fff7fb;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:86%;font-size:11.5px;padding:10px 12px;border-radius:16px;line-height:1.8;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+  .msg.bot{background:#fff;border:1px solid var(--pink-l2);align-self:flex-start;border-top-right-radius:4px}
+  .msg.me{background:linear-gradient(90deg,var(--pink),var(--pink-d));color:#fff;align-self:flex-end;border-top-left-radius:4px}
+  .qq{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+  .qq button{text-align:right;font-size:11px;background:#fff;border:1px solid var(--pink-l2);color:var(--pink-d);padding:8px 11px;border-radius:12px}
+  .qq button:hover{background:var(--pink-l)}
+  .cfoot{padding:11px;border-top:1px solid var(--line);background:#fff}
+  .cfoot form{display:flex;gap:7px}
+  .cfoot input{flex:1;background:#f8fafc;border:1px solid var(--pink-l2);border-radius:12px;padding:9px 12px;font-size:11.5px;outline:none}
+  .cfoot input:focus{border-color:var(--pink)}
+  .cfoot .send{width:40px;background:var(--pink);color:#fff;border-radius:12px;display:grid;place-items:center;font-size:15px}
+  .cfoot .meta{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:7px}
+  .cfoot .meta b{color:var(--sky-d);cursor:pointer}
+
+  /* ===== Tracker ===== */
+  .steps{background:#f8fafc;border:1px solid var(--pink-l2);border-radius:18px;padding:14px}
+  .stepslbl{display:grid;grid-template-columns:repeat(4,1fr);font-size:10px;font-weight:800;text-align:center;margin-bottom:8px;color:#94a3b8}
+  .stepslbl .on{color:var(--pink)}
+  .stepslbl .on3{color:var(--sky-d)}
+  .stepslbl .on4{color:#059669}
+  .oinfo{background:var(--pink-l);border:1px solid var(--pink-l2);border-radius:18px;padding:13px;font-size:11.5px}
+  .oinfo div{display:flex;justify-content:space-between;padding:3px 0}
+  .oinfo span:first-child{color:var(--muted)}
+  .oinfo span:last-child{font-weight:800}
+  .oitems{max-height:130px;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+  .oitems div{background:#f8fafc;border-radius:12px;padding:8px 11px;font-size:11px;display:flex;justify-content:space-between}
+  .oitems b{color:var(--pink)}
+
+  /* ===== Seller ===== */
+  .sellerbar{background:linear-gradient(135deg,#fff,var(--pink-l));border-bottom:1px solid var(--line);position:sticky;top:0;z-index:45}
+  .sbin{display:flex;align-items:center;justify-content:space-between;padding:11px 0;gap:12px;flex-wrap:wrap}
+  .sbadges{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .sbadge{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+  .sbadge small{font-size:11px;color:var(--muted);display:block}
+  .sbadge b{font-size:21px;font-weight:900;display:block;line-height:1.4}
+  .sbadge i{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:21px}
+  .sbadge.a i{background:var(--pink-l)}.sbadge.b i{background:var(--sky-l)}.sbadge.c i{background:#ecfdf5}.sbadge.d i{background:#fffbeb}
+  .stabbar{display:flex;gap:8px;overflow-x:auto;padding:9px 0;scrollbar-width:none}
+  .stabbar::-webkit-scrollbar{display:none}
+  .stab{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;background:#fff;border:1px solid #e2e8f0;color:var(--muted);padding:8px 13px;border-radius:13px;white-space:nowrap}
+  .stab.on{background:var(--pink);border-color:var(--pink);color:#fff;box-shadow:0 6px 16px rgba(236,72,153,.25)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}
+  .card .chead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--pink-l2);flex-wrap:wrap}
+  .card .chead h2{font-size:16px;font-weight:900;display:flex;align-items:center;gap:8px}
+  .card .chead p{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .tblwrap{overflow-x:auto}
+  table.et{width:100%;border-collapse:collapse;font-size:11.5px;min-width:900px}
+  table.et th{background:var(--pink-l);color:var(--muted);font-weight:800;padding:11px;text-align:right;white-space:nowrap}
+  table.et th:first-child{border-radius:12px 0 0 12px}
+  table.et th:last-child{border-radius:0 12px 12px 0}
+  table.et td{padding:10px 11px;border-bottom:1px solid #fdf2f8;vertical-align:middle}
+  table.et tr:hover td{background:#fafbfd}
+  .prodcell{display:flex;align-items:center;gap:9px}
+  .prodcell img{width:46px;height:46px;border-radius:12px;object-fit:cover;border:1px solid var(--pink-l2)}
+  .prodcell b{font-weight:800;max-width:210px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+  .inp{background:#f8fafc;border:1px solid var(--pink-l2);border-radius:11px;padding:8px 9px;font-size:11.5px;font-weight:700;outline:none;font-family:inherit}
+  .inp:focus{border-color:var(--pink);background:#fff}
+  .inp.num{width:108px;font-variant-numeric:tabular-nums}
+  .inp.stk{width:66px;text-align:center}
+  .inp.stk.low{background:#fff1f2;border-color:#fecdd3;color:#be123c}
+  .pct{background:var(--pink-l2);color:var(--pink-d);font-weight:900;font-size:11px;padding:2px 8px;border-radius:99px}
+  .iconbtn{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:14px;color:var(--muted)}
+  .iconbtn.e:hover{background:var(--sky-l);color:var(--sky-d)}
+  .iconbtn.d:hover{background:#fff1f2;color:var(--bad)}
+  .savebtn{display:inline-flex;align-items:center;gap:5px;background:var(--pink-l);color:var(--pink);border:1px solid var(--pink-b);font-size:11px;font-weight:900;padding:7px 12px;border-radius:11px}
+  .savebtn:hover{background:var(--pink);color:#fff}
+  .savebtn.done{background:#10b981;border-color:#10b981;color:#fff}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .formgrid .full{grid-column:1/-1}
+  .checkline{display:flex;align-items:center;gap:9px;background:var(--pink-l);border:1px solid var(--pink-l2);border-radius:14px;padding:12px;font-size:12px;font-weight:800;cursor:pointer}
+  .checkline input{width:17px;height:17px;accent-color:var(--pink);cursor:pointer}
+  .preset{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .preset button{font-size:10.5px;background:#f8fafc;border:1px solid #e2e8f0;color:var(--muted);padding:5px 10px;border-radius:9px;font-weight:700}
+  .preset button.on{background:var(--pink);border-color:var(--pink);color:#fff}
+  .thumb{width:100%;height:170px;border-radius:16px;overflow:hidden;border:1px solid var(--pink-l2);background:#f8fafc;margin-top:8px}
+  .thumb img{width:100%;height:100%;object-fit:cover}
+  .ocard2{border:1px solid var(--pink-l2);background:#f8fafc;border-radius:18px;padding:14px;margin-bottom:12px}
+  .ocard2 .oh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0}
+  .ocard2 .oh .cd{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .ocard2 .oh b.code{font-family:monospace;color:var(--pink);font-size:13px}
+  .ocard2 select{background:#fff;border:1px solid var(--pink-b);border-radius:11px;padding:6px 9px;font-size:11px;font-weight:800;color:var(--pink-d);outline:none}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags span{background:#fff;border:1px solid var(--pink-l2);border-radius:10px;padding:4px 9px;font-size:11px}
+  .guide{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .gbox{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+  .gbox h4{font-size:13px;font-weight:900;display:flex;align-items:center;gap:7px;margin-bottom:8px}
+  .gbox p{font-size:12px;color:var(--muted)}
+  .gbox.a h4{color:var(--pink)}.gbox.b h4{color:var(--sky-d)}
+  .login{min-height:100vh;background:linear-gradient(135deg,var(--pink-l2),#fff 45%,var(--sky-l2));display:grid;place-items:center;padding:16px}
+  .loginbox{width:100%;max-width:400px;background:#fff;border:1px solid var(--pink-b);border-radius:28px;padding:28px;box-shadow:0 24px 60px rgba(236,72,153,.2);position:relative;overflow:hidden}
+  .loginbox::before{content:'';position:absolute;top:0;right:0;left:0;height:7px;background:linear-gradient(90deg,#f472b6,#f9a8d4,#7dd3fc)}
+  .loginbox .lc{text-align:center;margin-bottom:20px}
+  .loginbox .logo{width:78px;height:78px;margin:0 auto 12px;border-width:3px}
+  .loginbox h1{font-size:20px;font-weight:900;color:var(--pink)}
+  .loginbox .sub{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .pwwrap{position:relative}
+  .pwwrap i{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--pink-b);font-style:normal}
+  .pwwrap input{padding-right:42px;text-align:center;letter-spacing:8px;font-weight:900;font-size:16px;font-family:monospace}
+  .backlink{text-align:center;font-size:11.5px;color:var(--pink);font-weight:800;display:block;margin-top:16px}
+
+  .toast{position:fixed;bottom:24px;right:24px;z-index:90;background:#fff;border:1px solid #a7f3d0;color:#047857;font-size:12px;font-weight:800;padding:12px 18px;border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.15);animation:up .25s;display:flex;align-items:center;gap:8px;max-width:340px}
+  .toast.bad{border-color:#fecdd3;color:#be123c}
+
+  @media(max-width:1024px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .hero{grid-template-columns:1fr}
+    .cats{grid-template-columns:repeat(3,1fr)}
+    .fcols{grid-template-columns:1fr 1fr}
+    .trust{grid-template-columns:repeat(2,1fr)}
+    .offers .in{flex-direction:column}
+    .ohead{flex-direction:row;justify-content:space-between;min-width:0;text-align:right}
+    .pd{grid-template-columns:1fr}
+    .sbadges{grid-template-columns:repeat(2,1fr)}
+    .guide{grid-template-columns:1fr}
+    .specgrid{grid-template-columns:1fr}
+    .search{display:none}
+    .mobsearch{display:block !important}
+    .brand .bname{font-size:17px}
+    .bsub{display:none}
+  }
+  @media(max-width:640px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .p .im{height:150px}
+    .slide{min-height:260px}
+    .slide .txt{padding:20px;max-width:100%}
+    .slide h2{font-size:19px}
+    .slide .bgim{display:none}
+    .cats{grid-template-columns:repeat(3,1fr)}
+    .hide-sm{display:none !important}
+    .cats{gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ STOREFRONT VIEW ============ -->
+<div id="storeView">
+
+  <!-- Top announcement -->
+  <div class="topbar">✨ به فروشگاه رسمی <b>NELLA_SHOPP</b> خوش آمدید! ارسال رایگان برای خریدهای بالای ۴۰۰ هزار تومان 🌸</div>
+
+  <!-- Header -->
+  <header class="site">
+    <div class="wrap">
+      <div class="hrow">
+        <a href="#" class="brand">
+          <div class="logo"><img src="/logo.png" alt="NELLA_SHOPP" onerror="this.style.display='none'" /></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span class="bname">NELLA_SHOPP</span>
+              <span class="btag">نلا شاپ</span>
+            </div>
+            <div class="bsub">فروشگاه تخصصی زیبایی و اکسسوری فانتزی</div>
+          </div>
+        </a>
+
+        <div class="search" id="searchBox">
+          <span class="ic">🔍</span>
+          <input id="searchInput" type="text" placeholder="جستجو در محصولات نلا شاپ (رژ، بالم لب، اکسسوری، عطر...)" autocomplete="off" />
+          <div class="sugg hide" id="suggBox">
+            <h5>🔥 بیشترین جستجوهای اخیر در نلا شاپ</h5>
+            <div class="chips" id="popularChips"></div>
+          </div>
+        </div>
+
+        <div class="acts">
+          <button class="btn btn-pink" onclick="openSellerLogin()">🔐 <span class="hide-sm">ورود فروشندگان</span></button>
+          <button class="btn btn-sky hide-sm" onclick="openTracker()">🚚 پیگیری سفارش</button>
+          <button class="btn btn-ghost hide-sm" onclick="toggleChat(true)">🎧 پشتیبانی</button>
+          <button class="cartbtn" onclick="openCart()">
+            🛒
+            <span class="hide-sm" id="cartMiniLabel">سبد خرید</span>
+            <span class="badge hide" id="cartBadge">۰</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobsearch hide" id="mobSearch">
+        <input id="searchInputMob" type="text" placeholder="جستجو در محصولات نلا شاپ..." />
+      </div>
+    </div>
+
+    <nav class="mainnav">
+      <div class="wrap">
+        <div class="navin" id="navCats"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="wrap">
+    <section class="hero">
+      <div class="slide" id="slideBox"></div>
+      <div class="side">
+        <div class="pcard" onclick="setCategory('مراقبت پوستی')">
+          <div>
+            <span class="pt">روتین شادابی پوست</span>
+            <h3>سرم‌ها و ماسک‌های آبرسان</h3>
+            <span class="d">حاوی هیالورونیک اسید و ویتامین C</span>
+          </div>
+          <div class="em">✨</div>
+        </div>
+        <div class="pcard pk" onclick="setCategory('زیورآلات و اکسسوری')">
+          <div>
+            <span class="pt">کادویی محبوب دخترانه</span>
+            <h3>اکسسوری و پاپیون صورتی</h3>
+            <span class="d">طرح‌های ترند اینستاگرام</span>
+          </div>
+          <div class="em">🎀</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special offers -->
+    <section class="offers" id="offers">
+      <div class="in">
+        <div class="ohead">
+          <div>
+            <div class="cicon">٪</div>
+            <h2>پیشنهاد<br />شگفت‌انگیز</h2>
+            <small>تخفیف‌های استثنایی نلا شاپ</small>
+          </div>
+          <div class="timer">
+            <b id="tH">۰۰</b>:<b id="tM">۰۰</b>:<b id="tS">۰۰</b>
+          </div>
+        </div>
+        <div class="orow" id="offerRow"></div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="sec">
+      <div class="secttl">
+        <h2><em>😍</em> دسته‌بندی‌های محبوب نلا شاپ</h2>
+        <span>انتخاب سریع دسته‌ها</span>
+      </div>
+      <div class="cats" id="catGrid"></div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="sec">
+      <div class="toolbar">
+        <div class="tt">
+          <h1 id="catalogTitle">تمامی محصولات نلا شاپ (NELLA_SHOPP)</h1>
+          <span id="catalogCount">۰ کالا</span>
+        </div>
+        <div class="tools">
+          <button class="togg" id="stockTogg" onclick="toggleStock()">✓ فقط کالاهای موجود</button>
+          <div class="seg">
+            <span>مرتب‌سازی:</span>
+            <button data-s="new" class="on" onclick="setSort('new')">جدیدترین</button>
+            <button data-s="sales" onclick="setSort('sales')">پرفروش‌ترین</button>
+            <button data-s="cheap" onclick="setSort('cheap')">ارزان‌ترین</button>
+            <button data-s="exp" onclick="setSort('exp')">گران‌ترین</button>
+          </div>
+          <button class="clr hide" id="clearBtn" onclick="clearFilters()">حذف فیلترها ✕</button>
+        </div>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="frow">
+        <div class="fb">
+          <div class="logo"><img src="/logo.png" alt="NELLA_SHOPP" onerror="this.style.display='none'" /></div>
+          <span class="bname" style="font-size:15px">NELLA_SHOPP</span>
+        </div>
+        <button class="btn btn-ghost" onclick="window.scrollTo({top:0,behavior:'smooth'})">بازگشت به بالا ↑</button>
+      </div>
+
+      <div class="trust">
+        <div><i>🚚</i><b>امکان تحویل اکسپرس</b><span>ارسال سریع به تمام نقاط ایران</span></div>
+        <div><i>🎧</i><b>پشتیبانی ۲۴ ساعته</b><span>پاسخگویی در ۷ روز هفته</span></div>
+        <div><i>↩️</i><b>۷ روز ضمانت بازگشت کالا</b><span>ضمانت بازگشت بی‌قید و شرط</span></div>
+        <div><i>🛡️</i><b>ضمانت اصل بودن کالا</b><span>کالاهای اورجینال و باکیفیت نلا</span></div>
+      </div>
+
+      <div class="fcols">
+        <div>
+          <h3>فروشگاه نلا شاپ <span style="color:var(--pink);font-size:13px">(NELLA_SHOPP)</span></h3>
+          <p>نلا شاپ، مرکز تخصصی ارائه محصولات زیبایی، مراقبت پوستی، اکسسوری‌های ترند و فانتزی و هدایای شیک است. هدف ما ایجاد یک تجربه خرید آرامش‌بخش، زیبا و باکیفیت با رنگ‌های صورتی و آبی آسمانی برای تمام همراهان عزیز است.</p>
+          <div class="ct"><span>☎️ ۰۲۱-۸۸۹۹۷۷۸۸</span><span>✉️ info@nellashopp.ir</span></div>
+        </div>
+        <div>
+          <h4>راهنمای خرید</h4>
+          <ul>
+            <li onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})">شگفت‌انگیزها</li>
+            <li>نحوه ثبت سفارش</li>
+            <li>رویه ارسال سفارش</li>
+            <li>شیوه‌های پرداخت</li>
+          </ul>
+        </div>
+        <div>
+          <h4>خدمات مشتریان</h4>
+          <ul>
+            <li>پرسش‌های متداول</li>
+            <li>رویه بازگرداندن کالا</li>
+            <li>حریم خصوصی</li>
+            <li onclick="openSellerLogin()" style="color:var(--pink);font-weight:800">🔐 ورود فروشندگان</li>
+          </ul>
+        </div>
+        <div>
+          <h4>ما را در شبکه‌های اجتماعی دنبال کنید</h4>
+          <div class="meti"><a href="#" title="اینستاگرام">📸</a><a href="#" title="تلگرام">✈️</a></div>
+          <p style="font-size:11px">صفحه رسمی اینستاگرام: <b style="color:var(--pink)">@nella_shopp</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="copy">تمامی حقوق مادی و معنوی این وب‌سایت متعلق به فروشگاه <b style="color:var(--pink)">NELLA_SHOPP</b> (نلا شاپ) می‌باشد. 🩷</div>
+  </footer>
+</div>
+
+<!-- ============ PRODUCT DETAIL MODAL ============ -->
+<div class="ov hide" id="pdModal" onclick="if(event.target===this)closePd()">
+  <div class="modal">
+    <button class="mx" onclick="closePd()">✕</button>
+    <div class="mhead">نلا شاپ / <b id="pdCrumbCat"></b> / <span id="pdCrumbTitle"></span></div>
+    <div class="pd">
+      <div>
+        <div class="im"><img id="pdImg" src="" alt="" /></div>
+        <div class="pdbadges">
+          <div class="a">🛡️ ضمانت اصالت کالا</div>
+          <div class="b">↩️ ۷ روز ضمانت بازگشت</div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <span class="cat" id="pdCat"></span>
+          <span style="font-size:12px;color:#d97706;font-weight:800" id="pdRating"></span>
+        </div>
+        <h1 id="pdTitle"></h1>
+        <div class="shop">
+          <div class="l">
+            <div class="ic">🏪</div>
+            <div>
+              <b id="pdSeller">نلا شاپ رسمی (NELLA_SHOPP) <span style="color:#10b981">✓</span></b>
+              <small>رضایت خریداران: ۱۰۰٪ | عملکرد عالی</small>
+            </div>
+          </div>
+          <span class="ok">ارسال سریع نلا</span>
+        </div>
+        <div id="pdColorsWrap">
+          <label class="flabel" id="pdColorLabel">انتخاب رنگ:</label>
+          <div class="clrsel" id="pdColors"></div>
+        </div>
+        <div class="spects"><ul id="pdSpecs"></ul></div>
+        <div class="buybox">
+          <div class="ship">🚚 <span id="pdStockTxt"></span></div>
+          <div class="num"><s id="pdOldPrice"></s><b id="pdPrice"></b></div>
+        </div>
+        <button class="btn btn-pink btn-block" style="margin-top:14px;padding:14px" id="pdAddBtn">🛒 افزودن به سبد خرید</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tabbar">
+        <button class="on" data-t="spec" onclick="setPdTab('spec')">مشخصات فنی و ویژگی‌ها</button>
+        <button data-t="desc" onclick="setPdTab('desc')">معرفی و نقد و بررسی</button>
+        <button data-t="rev" onclick="setPdTab('rev')">نظرات خریداران</button>
+      </div>
+      <div id="tab-spec"><div class="specgrid" id="pdSpecGrid"></div></div>
+      <div id="tab-desc" class="hide"><div class="descbox" id="pdDesc"></div></div>
+      <div id="tab-rev" class="hide">
+        <div style="background:#fff;border:1px solid var(--pink-l2);border-radius:18px;padding:14px;margin-bottom:12px">
+          <label class="lb">ثبت نظر شما درباره این محصول:</label>
+          <form class="inrow" onsubmit="addReview(event)">
+            <input class="fld" id="revInput" placeholder="تجربه یا سوال خود درباره این کالا را بنویسید..." />
+            <button class="btn btn-pink" type="submit">ارسال نظر</button>
+          </form>
+        </div>
+        <div id="revList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer hide" id="cartDrawer" onclick="if(event.target===this)closeCart()">
+  <div class="panel">
+    <div class="dhead">
+      <div class="l">
+        <div class="ic">🛍️</div>
+        <div><h3>سبد خرید شما</h3><small id="cartCountTxt">۰ کالا در سبد</small></div>
+      </div>
+      <button class="btn btn-ghost" onclick="closeCart()">✕</button>
+    </div>
+    <div class="freeship" id="freeshipBox">
+      <div class="t"><b id="freeshipTxt"></b><span id="freeshipPct"></span></div>
+      <div class="bar"><i id="freeshipBar" style="width:0%"></i></div>
+    </div>
+    <div class="dbody" id="cartBody"></div>
+    <div class="dfoot" id="cartFoot"></div>
+  </div>
+</div>
+
+<!-- ============ ORDER TRACKER ============ -->
+<div class="ov hide" id="trackModal" onclick="if(event.target===this)closeTracker()">
+  <div class="modal sm">
+    <button class="mx" onclick="closeTracker()">✕</button>
+    <div style="background:linear-gradient(90deg,var(--pink),#38bdf8);color:#fff;padding:18px 22px">
+      <h3 style="font-size:15px;font-weight:900">🚚 پیگیری سفارش نلا شاپ</h3>
+      <p style="font-size:11.5px;opacity:.9">رهگیری مرسوله پستی و وضعیت ارسال</p>
+    </div>
+    <div style="padding:22px">
+      <label class="lb">شماره پیگیری سفارش را وارد کنید:</label>
+      <form class="inrow" onsubmit="trackOrder(event)">
+        <input class="fld" id="trackInput" placeholder="NEL-XXXXX" style="text-align:center;font-family:monospace;font-weight:900" />
+        <button class="btn btn-pink" type="submit">🔍 رهگیری</button>
+      </form>
+      <p class="note">کد پیگیری پس از ثبت سفارش برای شما نمایش داده می‌شود (مثال: NEL-98214).</p>
+      <div id="trackResult" style="margin-top:16px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SELLER LOGIN ============ -->
+<div class="ov hide" id="sellerLogin" onclick="if(event.target===this)closeSellerLogin()">
+  <div class="loginbox" style="max-width:400px">
+    <div class="lc">
+      <div class="logo"><img src="/logo.png" alt="NELLA_SHOPP" onerror="this.style.display='none'" /></div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px">
+        <h1>NELLA_SHOPP</h1>
+        <span class="btag" style="background:var(--pink-l2);color:var(--pink-d);border-color:var(--pink-b)">پنل فروشنده</span>
+      </div>
+      <p class="sub">ورود اختصاصی مدیریت و فروشندگان فروشگاه نلا شاپ</p>
+    </div>
+    <form onsubmit="sellerLogin(event)">
+      <label class="lb">رمز عبور ورود به پنل فروشنده:</label>
+      <div class="pwwrap">
+        <i>🔑</i>
+        <input class="fld" id="sellerPw" type="password" placeholder="••••" autocomplete="off" required />
+      </div>
+      <p class="note" style="text-align:center">رمز عبور تنها در اختیار مدیریت فروشگاه قرار دارد.</p>
+      <div id="sellerLoginMsg" style="margin-top:10px"></div>
+      <button class="btn btn-pink btn-block" style="margin-top:12px;padding:13px" type="submit">🔐 ورود به پنل مدیریت فروشنده</button>
+    </form>
+    <a href="#" class="backlink" onclick="closeSellerLogin();return false">→ بازگشت به صفحه اصلی فروشگاه</a>
+  </div>
+</div>
+
+<!-- ============ SELLER DASHBOARD ============ -->
+<div id="sellerView" class="hide">
+  <div class="sellerbar">
+    <div class="wrap">
+      <div class="sbin">
+        <div class="brand">
+          <div class="logo"><img src="/logo.png" alt="NELLA_SHOPP" onerror="this.style.display='none'" /></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span class="bname" style="font-size:17px">NELLA_SHOPP</span>
+              <span class="btag" style="background:var(--pink-l2);color:var(--pink-d);border-color:var(--pink-b)">پنل رسمی فروشنده</span>
+            </div>
+            <div class="bsub">مدیریت محصولات، ویرایش قیمت‌ها و سفارشات</div>
+          </div>
+        </div>
+        <div class="acts">
+          <button class="btn btn-sky" onclick="exitSeller()">🏪 مشاهده فروشگاه نلا</button>
+          <button class="btn btn-ghost" onclick="logoutSeller()">↩️ خروج از پنل</button>
+        </div>
+      </div>
+      <div class="stabbar" id="sellerTabs">
+        <button class="stab on" data-tab="price" onclick="setSellerTab('price')">💰 ویرایش قیمت و موجودی</button>
+        <button class="stab" data-tab="add" onclick="setSellerTab('add')">➕ افزودن محصول جدید</button>
+        <button class="stab" data-tab="orders" onclick="setSellerTab('orders')">📦 سفارشات خریداران</button>
+        <button class="stab" data-tab="msgs" onclick="setSellerTab('msgs')">💬 پیام‌های مشتریان</button>
+        <button class="stab" data-tab="guide" onclick="setSellerTab('guide')">📖 راهنمای فروشنده</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding:18px 16px 40px">
+    <div id="sellerMsg" style="margin-bottom:14px"></div>
+    <div class="sbadges" id="statCards"></div>
+    <div id="sellerTabContent"></div>
+  </div>
+</div>
+
+<!-- ============ SUPPORT CHAT ============ -->
+<button class="fab" id="chatFab" onclick="toggleChat()" title="پشتیبانی آنلاین نلا شاپ">🎧</button>
+<div class="chat hide" id="chatBox">
+  <div class="ch">
+    <div class="l">
+      <div class="ic">🎧</div>
+      <div><b>پشتیبانی نلا شاپ</b><small><i></i> پاسخگوی آنلاین</small></div>
+    </div>
+    <button onclick="toggleChat(true)" style="color:#fff;font-size:15px">✕</button>
+  </div>
+  <div class="msgs" id="chatMsgs"></div>
+  <div class="cfoot">
+    <form onsubmit="sendChat(event)">
+      <input id="chatInput" placeholder="پیام خود را بنویسید..." />
+      <button class="send" type="submit">➤</button>
+    </form>
+    <div class="meta"><span>☎️ ۰۲۱-۸۸۹۹۷۷۸۸</span><b onclick="openTicket()">ثبت تیکت اختصاصی</b></div>
+  </div>
+</div>
+
+<!-- ============ TICKET MODAL ============ -->
+<div class="ov hide" id="ticketModal" onclick="if(event.target===this)closeTicket()">
+  <div class="modal sm">
+    <button class="mx" onclick="closeTicket()">✕</button>
+    <div style="background:linear-gradient(90deg,var(--pink),#38bdf8);color:#fff;padding:18px 22px">
+      <h3 style="font-size:15px;font-weight:900">💬 ثبت تیکت پشتیبانی</h3>
+      <p style="font-size:11.5px;opacity:.9">پیام شما برای کارشناسان نلا شاپ ارسال می‌شود</p>
+    </div>
+    <form style="padding:22px" onsubmit="submitTicket(event)">
+      <label class="lb">نام و نام خانوادگی *</label>
+      <input class="fld" id="tkName" required style="margin-bottom:12px" />
+      <label class="lb">شماره تماس یا ایمیل *</label>
+      <input class="fld" id="tkContact" required style="margin-bottom:12px" />
+      <label class="lb">متن پیام *</label>
+      <textarea class="fld" id="tkMsg" rows="3" required style="margin-bottom:14px"></textarea>
+      <button class="btn btn-pink btn-block" type="submit">ارسال پیام به پشتیبانی</button>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ================= Persian helpers ================= */
+const FA = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+const fa = n => String(n == null ? '' : n).replace(/[0-9]/g, d => FA[+d]);
+const money = n => fa(Number(n || 0).toLocaleString('en-US')) + ' تومان';
+const disc = (o, p) => (o && p && o > p) ? Math.round(((o - p) / o) * 100) : 0;
+const uid = () => Math.random().toString(36).slice(2, 9);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* SHA-256 password verification (رمز در سورس صفحه قرار ندارد) */
+const PW_HASH = '16740bf13991fe083fbe5820cc8da08a5d88e5a48f44a3cfcc283c27b2797ba7';
+async function sha256(t){
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
+  return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2,'0')).join('');
+}
+
+/* ================= Data ================= */
+const CATEGORIES = ['لوازم آرایشی','مراقبت پوستی','عطر و ادکلن','زیورآلات و اکسسوری','لوازم فانتزی و کادویی'];
+const CAT_ICONS = {'لوازم آرایشی':'💄','مراقبت پوستی':'🧴','عطر و ادکلن':'🌸','زیورآلات و اکسسوری':'💎','لوازم فانتزی و کادویی':'🎁'};
+const DEFAULT_PRODUCTS = [
+  {id:1,title:'رژ لب جامد مات مخملی نلا کالکشن صورتی کالباسی کد ۲۰۲',category:'لوازم آرایشی',price:185000,originalPrice:245000,stock:25,salesCount:142,rating:4.9,reviewCount:38,isSpecial:true,imageUrl:'https://images.pexels.com/photos/25533521/pexels-photo-25533521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'رژ لب جامد و مات نلا با بافت فوق‌العاده نرم و مخملی، بدون خشک کردن لب‌ها. ماندگاری ۱۲ ساعته با پیگمنت رنگی بسیار بالا و رایحه ملایم وانیلی.',specs:[{key:'نوع بافت',value:'مات و مخملی'},{key:'ماندگاری',value:'۱۲ ساعته'},{key:'کشور سازنده',value:'کره جنوبی / فرمول ویژه نلا'},{key:'ویژگی خاص',value:'حاوی ویتامین E و روغن جوجوبا'}],colors:[{name:'صورتی نود',code:'#f472b6'},{name:'کالباسی روشن',code:'#f9a8d4'},{name:'شکلاتی ملایم',code:'#fda4af'}]},
+  {id:2,title:'سرم آبرسان و روشن‌کننده هیالورونیک اسید پینک گلو نلا شاپ',category:'مراقبت پوستی',price:340000,originalPrice:480000,stock:18,salesCount:96,rating:4.8,reviewCount:52,isSpecial:true,imageUrl:'https://images.pexels.com/photos/24602077/pexels-photo-24602077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'سرم مغذی و جوانساز پوست نلا با قطرات درخشان صورتی. سرشار از اسید هیالورونیک پنج‌لایه، نیاسینامید و عصاره گل رز جهت شادابی و شفافیت سریع پوست.',specs:[{key:'حجم',value:'۵۰ میلی‌لیتر'},{key:'نوع پوست',value:'انواع پوست بخصوص خشک'},{key:'ترکیبات اصلی',value:'هیالورونیک اسید، نیاسینامید، عصاره رز'},{key:'تاثیر فوری',value:'درخشندگی شیشه‌ای و آبرسانی عمیق'}],colors:[]},
+  {id:3,title:'ادو پرفیوم زنانه مینیاتوری فلاور کیس نلا شاپ ۲۵ میل',category:'عطر و ادکلن',price:295000,originalPrice:390000,stock:14,salesCount:88,rating:4.7,reviewCount:29,isSpecial:true,imageUrl:'https://images.pexels.com/photos/31449823/pexels-photo-31449823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'عطر جیبی شیک با رایحه‌ای بسیار شیرین و خنک از شکوفه‌های بهاری، توت‌فرنگی وحشی و مشک سفید. بطری کریستالی زیبا با درپوش پاپیونی.',specs:[{key:'طبع',value:'خنک و شیرین ملایم'},{key:'گروه بویایی',value:'گلی میوه‌ای'},{key:'پخش بو',value:'عالی تا ۶ ساعت'},{key:'حجم',value:'۲۵ میلی‌لیتر مسافرتی'}],colors:[]},
+  {id:4,title:'بالم لب حرارتی شاین‌دار کریستالی طرح پاپیون نلا',category:'لوازم آرایشی',price:95000,originalPrice:135000,stock:45,salesCount:310,rating:4.9,reviewCount:64,isSpecial:true,imageUrl:'https://images.pexels.com/photos/3373741/pexels-photo-3373741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'بالم لب جادویی که با تغییر دمای بدن، رنگ صورتی طبیعی و جذابی به لب‌ها می‌دهد. حاوی ذرات براق نانو و ویتامین A و E جهت درمان خشکی و ترک لب.',specs:[{key:'تغییر رنگ',value:'هوشمند بر اساس دمای لب'},{key:'براق‌کنندگی',value:'شاین ملایم و درخشان'},{key:'خواص',value:'ترمیم‌کننده و نرم‌کننده'}],colors:[{name:'صورتی ملایم',code:'#f472b6'},{name:'رزگلد شاین',code:'#fb7185'}]},
+  {id:5,title:'دستبند نقره ۹۲۵ عیار نگین‌دار طرح پاپیون صورتی نلا',category:'زیورآلات و اکسسوری',price:490000,originalPrice:620000,stock:9,salesCount:45,rating:5,reviewCount:19,isSpecial:false,imageUrl:'https://images.pexels.com/photos/2866796/pexels-photo-2866796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'دستبند ظریف نقره استرلینگ با نگین‌های زیرکنیا درخشان صورتی و سفید. ضد حساسیت، رنگ ثابت با آبکاری رادیوم و دارای قفل قابل تنظیم.',specs:[{key:'عیار',value:'نقره ۹۲۵ استرلینگ اصل'},{key:'طول زنجیر',value:'۱۶ + ۴ سانتی‌متر'},{key:'نوع نگین',value:'زیرکونیا AAAA'},{key:'بسته‌بندی',value:'جعبه کادویی هاردباکس نلا شاپ'}],colors:[{name:'نقره‌ای با نگین صورتی',code:'#e2e8f0'},{name:'رزگلد لوکس',code:'#fecdd3'}]},
+  {id:6,title:'کلیپس مو فانتزی ساتن کره‌ای طرح پاپیون مینیاتوری',category:'زیورآلات و اکسسوری',price:68000,originalPrice:90000,stock:50,salesCount:220,rating:4.8,reviewCount:43,isSpecial:false,imageUrl:'https://images.pexels.com/photos/7810600/pexels-photo-7810600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'کلیپس موی بسیار ترند و خاص مدل نلا با پارچه ساتن لطیف، دندانه‌های محکم بدون آسیب به موها و نگهداری فوق‌العاده قوی موهای بلند و متوسط.',specs:[{key:'جنس گیره',value:'اکریلیک نشکن + ساتن ابریشمی'},{key:'سایز',value:'بزرگ (۱۰ سانتی‌متر)'},{key:'مناسب برای',value:'استایل روزمره، مهمانی، هدیه'}],colors:[{name:'صورتی پاستلی',code:'#fbcfe8'},{name:'آبی آسمانی',code:'#bae6fd'},{name:'سفید صدفی',code:'#f8fafc'}]},
+  {id:7,title:'کرم دست و ناخن مرطوب‌کننده رایحه شکوفه گیلاس',category:'مراقبت پوستی',price:88000,originalPrice:110000,stock:35,salesCount:115,rating:4.6,reviewCount:22,isSpecial:false,imageUrl:'https://images.pexels.com/photos/7664873/pexels-photo-7664873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'کرم لطیف دست با جذب بسیار سریع بدون چربی و سنگینی، حاوی شی‌باتر، عصاره گیلاس ژاپنی و ویتامین B5 جهت تقویت ناخن‌ها و نرمی دست‌ها.',specs:[{key:'حجم',value:'۸۰ میلی‌لیتر'},{key:'رایحه',value:'شکوفه‌های گیلاس بهاری'},{key:'ویژگی',value:'تقویت کوتیکول و رفع خشکی'}],colors:[]},
+  {id:8,title:'دفترچه برنامه‌ریزی فانتزی پلنر هفتگی نلا شاپ پاستلی',category:'لوازم فانتزی و کادویی',price:135000,originalPrice:175000,stock:20,salesCount:79,rating:4.9,reviewCount:31,isSpecial:true,imageUrl:'https://images.pexels.com/photos/25906586/pexels-photo-25906586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',description:'پلنر ۱۰۰ برگ تمام رنگی با کاغذ تحریر باکیفیت ۸۰ گرمی، جلد سخت سلفونی مات با طرح اختصاصی NELLA_SHOPP همراه با برچسب‌های استیکری هدیه.',specs:[{key:'تعداد برگ',value:'۱۰۰ برگ گلاسه رنگی'},{key:'جلد',value:'هاردکاور سلفون مات ضد آب'},{key:'اقلام همراه',value:'۲ برگ استیکر پلنر کیوت'}],colors:[{name:'صورتی لایت',code:'#fce7f3'},{name:'آبی ملایم',code:'#e0f2fe'}]}
+];
+const PRESET_IMAGES = [
+  {label:'رژ لب پاستلی',url:'https://images.pexels.com/photos/25533521/pexels-photo-25533521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'سرم آبرسان',url:'https://images.pexels.com/photos/24602077/pexels-photo-24602077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'عطر مینیاتوری',url:'https://images.pexels.com/photos/31449823/pexels-photo-31449823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'بالم لب حرارتی',url:'https://images.pexels.com/photos/3373741/pexels-photo-3373741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'دستبند نقره',url:'https://images.pexels.com/photos/2866796/pexels-photo-2866796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'کلیپس مو',url:'https://images.pexels.com/photos/7810600/pexels-photo-7810600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'کرم دست',url:'https://images.pexels.com/photos/7664873/pexels-photo-7664873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {label:'پلنر فانتزی',url:'https://images.pexels.com/photos/25906586/pexels-photo-25906586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+];
+const SLIDES = [
+  {badge:'پیشنهاد ویژه این هفته',title:'جشنواره بهاره نلا شاپ (NELLA_SHOPP)',sub:'تا ۵۰٪ تخفیف روی محبوب‌ترین محصولات آرایشی و مراقبت پوستی پاستلی',btn:'مشاهده تخفیف‌ها',cat:'لوازم آرایشی',img:'https://images.pexels.com/photos/25533521/pexels-photo-25533521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {badge:'جدیدترین‌ها',title:'کالکشن جدید اکسسوری و پاپیون‌های نلا',sub:'کلیپس، کش موهای ساتن ابریشمی و زیورآلات نقره ترند دخترانه',btn:'خرید اکسسوری‌ها',cat:'زیورآلات و اکسسوری',img:'https://images.pexels.com/photos/2866796/pexels-photo-2866796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+  {badge:'ارسال رایگان نلا',title:'پک‌های کادویی و فانتزی ویژه',sub:'بسته‌بندی صورتی رویایی همراه با اشانتیون و یادداشت دست‌نویس اختصاصی',btn:'دیدن پک‌های کادویی',cat:'لوازم فانتزی و کادویی',img:'https://images.pexels.com/photos/31449823/pexels-photo-31449823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+];
+const POPULAR = ['رژ لب مات مخملی','سرم آبرسان پینک گلو','بالم لب حرارتی','دستبند نقره پاپیونی','کلیپس مو ساتن','پلنر فانتزی'];
+
+/* ================= Storage ================= */
+const LS = { p:'nella_products', o:'nella_orders', c:'nella_cart', m:'nella_msgs', s:'nella_seller_ok' };
+function load(k, fb){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; }catch(e){ return fb; } }
+function save(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+
+let products = load(LS.p, null) || DEFAULT_PRODUCTS.slice();
+let orders   = load(LS.o, [{orderNumber:'NEL-98214',customerName:'سارا محمدی',customerPhone:'09123456789',customerAddress:'تهران، سعادت‌آباد، میدان کاج، خیابان نهم، پلاک ۱۲',totalAmount:375000,status:'preparing',notes:'لطفاً با بسته‌بندی کادویی نلا ارسال شود.',items:[{title:'رژ لب جامد مات مخملی نلا کالکشن',price:185000,quantity:1},{title:'بالم لب حرارتی شاین‌دار کریستالی',price:95000,quantity:2}]}]);
+let messages = load(LS.m, []);
+let cart     = load(LS.c, []);
+let reviews  = [{name:'مهسا کریمی',rating:5,date:'۲ روز پیش',text:'بسیار عالی و باکیفیت! بسته‌بندی صورتی نلا شاپ هم فوق‌العاده شیک بود.'},{name:'آیدا رضوی',rating:5,date:'هفته گذشته',text:'دقیقاً مطابق عکس و اصل بود، ارسال خیلی سریع بود ممنون از نلا شاپ.'}];
+
+let state = { category:'همه', q:'', sort:'new', stockOnly:false };
+let ui = { slide:0, pdId:null, pdColor:'', tab:'spec', sellerTab:'price', edits:{} };
+
+function persistAll(){ save(LS.p, products); save(LS.o, orders); save(LS.c, cart); save(LS.m, messages); }
+
+/* ================= Toast ================= */
+function toast(msg, bad){
+  document.querySelectorAll('.toast').forEach(t => t.remove());
+  const d = document.createElement('div');
+  d.className = 'toast' + (bad ? ' bad' : '');
+  d.innerHTML = (bad ? '⚠️ ' : '✅ ') + esc(msg);
+  document.body.appendChild(d);
+  setTimeout(() => d.remove(), 3200);
+}
+
+/* ================= Header / Nav ================= */
+function renderNav(){
+  const nav = document.getElementById('navCats');
+  const all = ['همه', ...CATEGORIES];
+  nav.innerHTML = all.map(c =>
+    `<button class="${state.category===c?'on':''}" onclick="setCategory('${c}')">${c==='همه'?'📦 همه محصولات':(CAT_ICONS[c]||'')+' '+c}</button>`
+  ).join('') + `<span class="sep"></span><button onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})" style="color:var(--pink);font-weight:900">٪ شگفت‌انگیزها</button>`;
+}
+function setCategory(c){ state.category = c; renderNav(); renderCats(); renderProducts(); window.scrollTo({top:520,behavior:'smooth'}); }
+
+function renderCats(){
+  const g = document.getElementById('catGrid');
+  const all = [{name:'همه',label:'همه کالاها',icon:'📦',cls:''}, ...CATEGORIES.map((c,i)=>({name:c,label:c,icon:CAT_ICONS[c],cls:'c'+((i%5)+1)}))];
+  g.innerHTML = all.map(c => `<div class="cat ${c.cls} ${state.category===c.name?'on':''}" onclick="setCategory('${c.name}')"><i>${c.icon}</i><p>${c.label}</p></div>`).join('');
+}
+
+/* ================= Search ================= */
+const sIn = document.getElementById('searchInput'), sMob = document.getElementById('searchInputMob');
+document.getElementById('popularChips').innerHTML = POPULAR.map(p=>`<button class="chip" onclick="usePopular('${p}')">${p}</button>`).join('');
+sIn.addEventListener('focus', ()=> document.getElementById('suggBox').classList.remove('hide'));
+document.addEventListener('click', e => { if(!document.getElementById('searchBox').contains(e.target)) document.getElementById('suggBox').classList.add('hide'); });
+sIn.addEventListener('input', e => { state.q = e.target.value; sMob.value = e.target.value; renderProducts(); });
+sMob.addEventListener('input', e => { state.q = e.target.value; sIn.value = e.target.value; renderProducts(); });
+function usePopular(p){ state.q = p; sIn.value = p; sMob.value = p; document.getElementById('suggBox').classList.add('hide'); renderProducts(); }
+
+/* ================= Hero slider ================= */
+function renderSlide(){
+  const s = SLIDES[ui.slide];
+  document.getElementById('slideBox').innerHTML = `
+    <div class="bgim" style="background-image:url('${s.img}')"></div>
+    <div class="txt">
+      <span class="tag">✨ ${s.badge}</span>
+      <h2>${s.title}</h2>
+      <p>${s.sub}</p>
+      <button class="btn btn-pink" onclick="setCategory('${s.cat}')">${s.btn} ←</button>
+    </div>
+    <button class="arw l" onclick="moveSlide(-1)">›</button>
+    <button class="arw r" onclick="moveSlide(1)">‹</button>
+    <div class="dots">${SLIDES.map((_,i)=>`<i class="${i===ui.slide?'on':''}" onclick="ui.slide=${i};renderSlide()"></i>`).join('')}</div>`;
+}
+function moveSlide(d){ ui.slide = (ui.slide + d + SLIDES.length) % SLIDES.length; renderSlide(); }
+setInterval(()=>{ ui.slide = (ui.slide+1) % SLIDES.length; renderSlide(); }, 6000);
+
+/* ================= Special offers ================= */
+function renderOffers(){
+  const list = products.filter(p=>p.isSpecial);
+  document.getElementById('offerRow').innerHTML = list.map(p=>{
+    const d = disc(p.originalPrice, p.price);
+    return `<div class="ocard">
+      <div class="im" onclick="openPd(${p.id})">
+        <img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy" />
+        ${d?`<span class="off">${fa(d)}٪ تخفیف</span>`:''}
+      </div>
+      <h4 onclick="openPd(${p.id})">${esc(p.title)}</h4>
+      <div class="st"><span>فقط ${fa(p.stock)} عدد در انبار</span><b>شگفت‌انگیز</b></div>
+      <div class="bar"><i style="width:${Math.min(100,Math.max(15,p.stock*3))}%"></i></div>
+      <div class="price">${p.originalPrice>p.price?`<s>${fa(p.originalPrice.toLocaleString('en-US'))}</s>`:''}<b>${money(p.price)}</b></div>
+      <div class="acts2">
+        <button class="mini" onclick="addToCart(${p.id})">🛒 افزودن</button>
+        <button class="eye" onclick="openPd(${p.id})">👁️</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+let tSec = 14*3600 + 36*60 + 45;
+setInterval(()=>{
+  tSec = tSec>0 ? tSec-1 : 24*3600-1;
+  const h = Math.floor(tSec/3600), m = Math.floor((tSec%3600)/60), s = tSec%60;
+  document.getElementById('tH').textContent = fa(String(h).padStart(2,'0'));
+  document.getElementById('tM').textContent = fa(String(m).padStart(2,'0'));
+  document.getElementById('tS').textContent = fa(String(s).padStart(2,'0'));
+},1000);
+
+/* ================= Product grid ================= */
+function visibleProducts(){
+  let list = products.slice();
+  if(state.category !== 'همه') list = list.filter(p=>p.category===state.category);
+  if(state.stockOnly) list = list.filter(p=>p.stock>0);
+  if(state.q.trim()){
+    const q = state.q.trim().toLowerCase();
+    list = list.filter(p => (p.title+' '+p.category+' '+(p.description||'')).toLowerCase().includes(q));
+  }
+  if(state.sort==='cheap') list.sort((a,b)=>a.price-b.price);
+  else if(state.sort==='exp') list.sort((a,b)=>b.price-a.price);
+  else if(state.sort==='sales') list.sort((a,b)=>(b.salesCount||0)-(a.salesCount||0));
+  return list;
+}
+function setSort(s){ state.sort=s; document.querySelectorAll('.seg button').forEach(b=>b.classList.toggle('on', b.dataset.s===s)); renderProducts(); }
+function toggleStock(){ state.stockOnly=!state.stockOnly; document.getElementById('stockTogg').classList.toggle('on',state.stockOnly); renderProducts(); }
+function clearFilters(){ state={category:'همه',q:'',sort:'new',stockOnly:false}; sIn.value=''; sMob.value=''; document.querySelectorAll('.seg button').forEach(b=>b.classList.toggle('on',b.dataset.s==='new')); document.getElementById('stockTogg').classList.remove('on'); renderNav(); renderCats(); renderProducts(); }
+
+function renderProducts(){
+  const list = visibleProducts();
+  const g = document.getElementById('productGrid');
+  document.getElementById('catalogTitle').textContent = state.q.trim()
+    ? `نتایج جستجو برای: «${state.q.trim()}»`
+    : (state.category==='همه' ? 'تمامی محصولات نلا شاپ (NELLA_SHOPP)' : `محصولات دسته‌بندی ${state.category}`);
+  document.getElementById('catalogCount').textContent = `نمایش ${fa(list.length)} کالا با کیفیت تضمین شده`;
+  document.getElementById('clearBtn').classList.toggle('hide', !(state.q||state.category!=='همه'||state.stockOnly));
+
+  if(!list.length){
+    g.className='';
+    g.innerHTML = `<div class="empty" style="grid-column:1/-1"><i>🔍</i><h3>کالایی یافت نشد!</h3><p>هیچ کالایی با فیلترهای انتخابی پیدا نشد. لطفاً عبارت جستجو را تغییر دهید یا فیلترها را حذف کنید.</p><button class="btn btn-pink" onclick="clearFilters()">مشاهده همه محصولات</button></div>`;
+    return;
+  }
+  g.className='grid';
+  g.innerHTML = list.map(p=>{
+    const d = disc(p.originalPrice,p.price);
+    const inCart = cart.some(c=>c.id===p.id);
+    return `<div class="p">
+      <div class="top">
+        <span class="ct">${p.category}</span>
+        <span class="rt">⭐ ${fa(p.rating||4.8)}</span>
+      </div>
+      <div class="im" onclick="openPd(${p.id})">
+        <img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy" />
+        ${d?`<span class="off">${fa(d)}٪</span>`:''}
+        ${p.isSpecial?`<span style="position:absolute;bottom:8px;right:8px;background:rgba(236,72,153,.92);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:7px">شگفت‌انگیز</span>`:''}
+      </div>
+      <h3 onclick="openPd(${p.id})">${esc(p.title)}</h3>
+      <div class="ship">🚚 ارسال با پست پیشتاز</div>
+      <div class="foot">
+        <div class="pr">
+          <div class="av">${p.stock>0?'<b>موجود در انبار نلا</b>':'<o>ناموجود</o>'}</div>
+          <div class="num">${p.originalPrice>p.price?`<s>${fa(p.originalPrice.toLocaleString('en-US'))}</s>`:''}<b>${money(p.price)}</b></div>
+        </div>
+        <div class="btns">
+          <button class="add ${inCart?'in':''}" ${p.stock<=0?'disabled':''} onclick="addToCart(${p.id})">${inCart?'✓ در سبد خرید':'🛒 افزودن به سبد'}</button>
+          <button class="dtl" onclick="openPd(${p.id})" title="مشاهده مشخصات">✨</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ================= Product detail ================= */
+function openPd(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  ui.pdId = id; ui.pdColor = (p.colors&&p.colors[0]) ? p.colors[0].name : ''; ui.tab='spec';
+  document.getElementById('pdCrumbCat').textContent = p.category;
+  document.getElementById('pdCrumbTitle').textContent = p.title;
+  document.getElementById('pdImg').src = p.imageUrl;
+  document.getElementById('pdCat').textContent = p.category;
+  document.getElementById('pdRating').innerHTML = `⭐ ${fa(p.rating||4.8)} <span style="color:#94a3b8;font-weight:400">(${fa(p.reviewCount||12)} نظر ثبت‌شده)</span>`;
+  document.getElementById('pdTitle').textContent = p.title;
+  document.getElementById('pdOldPrice').innerHTML = p.originalPrice>p.price ? fa(p.originalPrice.toLocaleString('en-US'))+' تومان' : '';
+  document.getElementById('pdPrice').textContent = money(p.price);
+  document.getElementById('pdStockTxt').textContent = p.stock>0 ? 'موجود در انبار، آماده ارسال فوری' : 'این کالا موقتاً ناموجود است';
+  const addBtn = document.getElementById('pdAddBtn');
+  addBtn.disabled = p.stock<=0;
+  addBtn.style.opacity = p.stock<=0 ? .5 : 1;
+  addBtn.textContent = p.stock<=0 ? 'ناموجود' : '🛒 افزودن به سبد خرید';
+
+  const cw = document.getElementById('pdColorsWrap');
+  if(p.colors && p.colors.length){
+    cw.classList.remove('hide');
+    document.getElementById('pdColorLabel').textContent = 'انتخاب رنگ: ' + ui.pdColor;
+    document.getElementById('pdColors').innerHTML = p.colors.map(c=>
+      `<button class="${c.name===ui.pdColor?'on':''}" onclick="pickColor('${c.name}')"><i style="background:${c.code}"></i>${c.name}</button>`).join('');
+  } else cw.classList.add('hide');
+
+  const specs = p.specs||[];
+  document.getElementById('pdSpecs').innerHTML = specs.slice(0,3).map(s=>`<li><i></i><b>${esc(s.key)}:</b> ${esc(s.value)}</li>`).join('');
+  document.getElementById('pdSpecGrid').innerHTML = specs.length ? specs.map(s=>`<div><span>${esc(s.key)}</span><span>${esc(s.value)}</span></div>`).join('') : '<p style="font-size:12px;color:#94a3b8">مشخصات تکمیلی به زودی افزوده می‌شود.</p>';
+  document.getElementById('pdDesc').textContent = p.description || 'توضیحاتی برای این کالا ثبت نشده است.';
+  renderReviews();
+  setPdTab('spec');
+  document.getElementById('pdModal').classList.remove('hide');
+  document.body.style.overflow='hidden';
+}
+function pickColor(n){ ui.pdColor=n; const p=products.find(x=>x.id===ui.pdId); document.getElementById('pdColorLabel').textContent='انتخاب رنگ: '+n;
+  document.getElementById('pdColors').innerHTML = p.colors.map(c=>`<button class="${c.name===n?'on':''}" onclick="pickColor('${c.name}')"><i style="background:${c.code}"></i>${c.name}</button>`).join(''); }
+function setPdTab(t){ ui.tab=t; document.querySelectorAll('.tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  ['spec','desc','rev'].forEach(k=>document.getElementById('tab-'+k).classList.toggle('hide',k!==t)); }
+function renderReviews(){
+  document.getElementById('revList').innerHTML = reviews.map(r=>`<div class="revbox"><div class="rh"><b>${esc(r.name)}</b><span>${esc(r.date)} · ${'⭐'.repeat(r.rating)}</span></div><p>${esc(r.text)}</p></div>`).join('');
+}
+function addReview(e){
+  e.preventDefault();
+  const v = document.getElementById('revInput').value.trim(); if(!v) return;
+  reviews.unshift({name:'کاربر نلا شاپ',rating:5,date:'لحظاتی پیش',text:v});
+  document.getElementById('revInput').value=''; renderReviews(); toast('نظر شما با موفقیت ثبت شد. متشکریم! 🌸');
+}
+function closePd(){ document.getElementById('pdModal').classList.add('hide'); document.body.style.overflow=''; }
+
+/* ================= Cart ================= */
+function addToCart(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  const color = (ui.pdId===id && ui.pdColor) ? ui.pdColor : ((p.colors&&p.colors[0])?p.colors[0].name:'');
+  const ex = cart.find(c=>c.id===id && c.color===color);
+  if(ex) ex.quantity++; else cart.push({id:p.id,title:p.title,price:p.price,originalPrice:p.originalPrice,imageUrl:p.imageUrl,category:p.category,quantity:1,color});
+  persistAll(); renderCartBadge(); renderProducts(); renderOffers(); renderCartBody(); openCart();
+}
+function chQty(id,delta){
+  const i = cart.findIndex(c=>c.id===id); if(i<0) return;
+  cart[i].quantity += delta;
+  if(cart[i].quantity<=0) cart.splice(i,1);
+  persistAll(); renderCartBadge(); renderProducts(); renderOffers(); renderCartBody();
+}
+function rmCart(id){ cart = cart.filter(c=>c.id!==id); persistAll(); renderCartBadge(); renderProducts(); renderOffers(); renderCartBody(); }
+function renderCartBadge(){
+  const n = cart.reduce((s,c)=>s+c.quantity,0);
+  const b = document.getElementById('cartBadge');
+  b.textContent = fa(n); b.classList.toggle('hide', n===0);
+  const total = cart.reduce((s,c)=>s+c.price*c.quantity,0);
+  document.getElementById('cartMiniLabel').textContent = n ? money(total) : 'سبد خرید';
+}
+const FREE = 400000;
+function renderCartBody(){
+  document.getElementById('cartCountTxt').textContent = fa(cart.reduce((s,c)=>s+c.quantity,0)) + ' کالا در سبد';
+  const body = document.getElementById('cartBody'), foot = document.getElementById('cartFoot'), fs = document.getElementById('freeshipBox');
+  const total = cart.reduce((s,c)=>s+c.price*c.quantity,0);
+
+  if(cartCheckout && cart.length){
+    fs.classList.add('hide'); foot.innerHTML='';
+    body.innerHTML = `<form onsubmit="submitCheckout(event)">
+      <div class="alert info">📝 تکمیل اطلاعات ارسال سفارش</div>
+      <div id="coErr"></div>
+      <label class="lb">نام و نام خانوادگی تحویل‌گیرنده *</label>
+      <input class="fld" id="coName" required style="margin-bottom:11px" />
+      <label class="lb">شماره موبایل *</label>
+      <input class="fld" id="coPhone" required style="margin-bottom:11px" />
+      <label class="lb">آدرس دقیق پستی *</label>
+      <textarea class="fld" id="coAddr" rows="2" required style="margin-bottom:11px"></textarea>
+      <label class="lb">یادداشت (اختیاری)</label>
+      <input class="fld" id="coNote" placeholder="مثال: بسته‌بندی کادویی با روبان صورتی نلا" style="margin-bottom:11px" />
+      <label class="lb">کد تخفیف (NELLA-PINK)</label>
+      <div class="inrow" style="margin-bottom:11px">
+        <input class="fld" id="coPromo" placeholder="NELLA-PINK" style="text-transform:uppercase" />
+        <button class="btn btn-sky" type="button" onclick="applyPromo()">اعمال</button>
+      </div>
+      <div id="promoInfo"></div>
+      <div style="background:#f8fafc;border-radius:16px;padding:12px;margin-bottom:12px;font-size:12px">
+        <div class="sumrow"><span>مجموع سبد:</span><span>${money(total)}</span></div>
+        <div class="sumrow disc hide" id="promoRow"><span>تخفیف کوپن نلا:</span><span id="promoVal"></span></div>
+        <div class="sumrow tot"><span>مبلغ قابل پرداخت:</span><b id="coTotal">${money(total)}</b></div>
+      </div>
+      <div class="inrow">
+        <button class="btn btn-ok" style="flex:1;justify-content:center" type="submit">💳 پرداخت و ثبت نهایی سفارش</button>
+        <button class="btn btn-ghost" type="button" onclick="cartCheckout=false;renderCartBody()">بازگشت</button>
+      </div>
+    </form>`;
+    return;
+  }
+
+  if(!cart.length){
+    fs.classList.add('hide'); foot.innerHTML='';
+    body.innerHTML = `<div class="emptycart"><i>🛒</i><h4>سبد خرید شما در نلا شاپ خالی است!</h4><p>می‌توانید برای مشاهده محصولات جذاب و شگفت‌انگیز نلا شاپ به صفحه فروشگاه بازگردید.</p><button class="btn btn-pink" onclick="closeCart()">مشاهده محصولات</button></div>`;
+    return;
+  }
+
+  fs.classList.remove('hide');
+  const need = Math.max(0, FREE-total), pct = Math.min(100, Math.round(total/FREE*100));
+  document.getElementById('freeshipTxt').textContent = need===0 ? 'تبریک! ارسال برای این سفارش رایگان شد 🎁' : `تنها ${money(need)} تا ارسال رایگان!`;
+  document.getElementById('freeshipPct').textContent = fa(pct)+'٪';
+  document.getElementById('freeshipBar').style.width = pct+'%';
+
+  body.innerHTML = cart.map(c=>`<div class="citem">
+      <img src="${c.imageUrl}" alt="" />
+      <div class="ci">
+        <h5>${esc(c.title)}</h5>
+        ${c.color?`<span class="cl">رنگ: ${esc(c.color)}</span>`:''}
+        <div class="cp">${money(c.price)}</div>
+      </div>
+      <div class="qty">
+        <div class="b"><button onclick="chQty(${c.id},1)">＋</button><span>${fa(c.quantity)}</span><button onclick="chQty(${c.id},-1)">－</button></div>
+        <button class="rm" onclick="rmCart(${c.id})">🗑️ حذف</button>
+      </div>
+    </div>`).join('');
+
+  foot.innerHTML = `<div style="margin-bottom:11px">
+      <div class="sumrow disc"><span>سود شما از خرید:</span><span>${money(cart.reduce((s,c)=>s+((c.originalPrice||c.price)-c.price)*c.quantity,0))}</span></div>
+      <div class="sumrow tot"><span>مبلغ قابل پرداخت:</span><b>${money(total)}</b></div>
+    </div>
+    <button class="btn btn-pink btn-block" onclick="cartCheckout=true;renderCartBody()">ادامه ثبت سفارش و تسویه ←</button>`;
+}
+let cartCheckout=false, promoOk=false;
+function applyPromo(){
+  const v = (document.getElementById('coPromo').value||'').trim().toUpperCase();
+  const info = document.getElementById('promoInfo'), row = document.getElementById('promoRow');
+  const total = cart.reduce((s,c)=>s+c.price*c.quantity,0);
+  if(v==='NELLA-PINK'||v==='NELLA'){
+    promoOk=true; row.classList.remove('hide');
+    document.getElementById('promoVal').textContent = '-'+money(Math.round(total*0.1));
+    document.getElementById('coTotal').textContent = money(Math.round(total*0.9));
+    info.innerHTML = '<div class="okpill">✓ ۱۰٪ تخفیف ویژه صورتی با موفقیت اعمال شد!</div>';
+  } else {
+    promoOk=false; row.classList.add('hide');
+    document.getElementById('coTotal').textContent = money(total);
+    info.innerHTML = '<div class="alert bad">کد تخفیف وارد شده معتبر نیست.</div>';
+  }
+}
+function submitCheckout(e){
+  e.preventDefault();
+  const name=document.getElementById('coName').value.trim(), phone=document.getElementById('coPhone').value.trim(),
+        addr=document.getElementById('coAddr').value.trim(), note=document.getElementById('coNote').value.trim();
+  const total0 = cart.reduce((s,c)=>s+c.price*c.quantity,0);
+  const total = promoOk ? Math.round(total0*0.9) : total0;
+  const code = 'NEL-' + Math.floor(10000+Math.random()*90000);
+  orders.unshift({orderNumber:code,customerName:name,customerPhone:phone,customerAddress:addr,notes:note,totalAmount:total,status:'processing',paymentMethod:'پرداخت موفق شاپرک',items:cart.map(c=>({title:c.title,price:c.price,quantity:c.quantity,color:c.color}))});
+  cart.forEach(c=>{ const p=products.find(p=>p.id===c.id); if(p){ p.stock=Math.max(0,p.stock-c.quantity); p.salesCount=(p.salesCount||0)+c.quantity; }});
+  cart=[]; persistAll(); renderCartBadge(); renderProducts(); renderOffers();
+  document.getElementById('cartBody').innerHTML = `<div class="success">
+      <i>✓</i><h3>سفارش شما با موفقیت ثبت شد! 🎉</h3>
+      <p>همکاران ما در نلا شاپ سفارش شما را آماده و از طریق پست پیشتاز ارسال خواهند کرد.</p>
+      <div class="oinfo" style="margin-bottom:14px">
+        <div><span>شماره پیگیری سفارش:</span><span style="font-family:monospace;color:var(--pink);font-weight:900">${code}</span></div>
+        <div><span>مبلغ پرداخت شده:</span><span>${money(total)}</span></div>
+        <div><span>وضعیت فعلی:</span><span style="color:var(--sky-d)">در حال بررسی و آماده‌سازی</span></div>
+      </div>
+      <button class="btn btn-pink" onclick="closeCart()">ادامه خرید از نلا شاپ</button>
+    </div>`;
+  document.getElementById('cartFoot').innerHTML='';
+  document.getElementById('freeshipBox').classList.add('hide');
+  toast(`سفارش با کد پیگیری ${code} ثبت شد`);
+}
+function openCart(){ document.getElementById('cartDrawer').classList.remove('hide'); cartCheckout=false; renderCartBody(); document.body.style.overflow='hidden'; }
+function closeCart(){ document.getElementById('cartDrawer').classList.add('hide'); document.body.style.overflow=''; }
+
+/* ================= Tracker ================= */
+function openTracker(){ document.getElementById('trackModal').classList.remove('hide'); document.getElementById('trackResult').innerHTML=''; document.body.style.overflow='hidden'; }
+function closeTracker(){ document.getElementById('trackModal').classList.add('hide'); document.body.style.overflow=''; }
+const STATUS_LBL = {processing:'ثبت اولیه',preparing:'در حال بسته‌بندی',shipped:'تحویل به پست',delivered:'تحویل به خریدار',cancelled:'لغو شده'};
+function trackOrder(e){
+  e.preventDefault();
+  const q = document.getElementById('trackInput').value.trim().toUpperCase();
+  const o = orders.find(x=>x.orderNumber===q);
+  const box = document.getElementById('trackResult');
+  if(!o){ box.innerHTML='<div class="alert bad">سفارشی با این کد پیگیری پیدا نشد.</div>'; return; }
+  const step = {processing:1,preparing:2,shipped:3,delivered:4,cancelled:1}[o.status]||1;
+  const cls = ['','','','on3','on4'];
+  box.innerHTML = `<div class="steps">
+      <div class="stepslbl">
+        <span class="${step>=1?'on':''}">ثبت اولیه</span>
+        <span class="${step>=2?'on':''}">آماده‌سازی</span>
+        <span class="${step>=3?cls[3]:''}">تحویل به پست</span>
+        <span class="${step>=4?cls[4]:''}">تحویل مشتری</span>
+      </div>
+      <div class="bar"><i style="width:${step/4*100}%"></i></div>
+    </div>
+    <div class="oinfo" style="margin-top:12px">
+      <div><span>شماره سفارش:</span><span style="font-family:monospace">${o.orderNumber}</span></div>
+      <div><span>تحویل گیرنده:</span><span>${esc(o.customerName)}</span></div>
+      <div><span>مبلغ کل سفارش:</span><span style="color:var(--pink)">${money(o.totalAmount)}</span></div>
+      <div><span>وضعیت فعلی:</span><span style="color:var(--sky-d)">${STATUS_LBL[o.status]||o.status}</span></div>
+    </div>
+    <div style="margin-top:12px">
+      <label class="lb">اقلام این سفارش:</label>
+      <div class="oitems">${(o.items||[]).map(i=>`<div><span>${esc(i.title)}</span><b>${fa(i.quantity)} عدد</b></div>`).join('')}</div>
+    </div>`;
+}
+
+/* ================= Support chat ================= */
+const QA = [
+  {q:'هزینه و زمان ارسال چقدر است؟',a:'تمامی سفارش‌های نلا شاپ در تهران با پیک اختصاصی همان روز و شهرستان‌ها ظرف ۲ الی ۳ روز کاری با پست پیشتاز ارسال می‌شوند. سفارش‌های بالای ۴۰۰ هزار تومان ارسال رایگان دارند! 🌸'},
+  {q:'آیا محصولات اصل و دارای ضمانت هستند؟',a:'بله، تمامی محصولات نلا شاپ ۱۰۰٪ اورجینال و با ضمانت اصالت و ۷ روز ضمانت بازگشت بی‌قید و شرط تقدیم شما می‌شوند.'},
+  {q:'نحوه ورود به پنل فروشنده چگونه است؟',a:'ورود به پنل مدیریت فروشگاه با رمز عبور اختصاصی انجام می‌شود که تنها در اختیار مدیریت قرار دارد. برای دریافت دسترسی با پشتیبانی تماس بگیرید.'}
+];
+let chatOpen=false;
+function toggleChat(forceClose){
+  chatOpen = forceClose===true ? false : !chatOpen;
+  document.getElementById('chatBox').classList.toggle('hide', !chatOpen);
+  if(chatOpen && !document.getElementById('chatMsgs').children.length){
+    pushMsg('bot','سلام به پشتیبانی آنلاین نلا شاپ خوش آمدید! چطور می‌تونم کمکتون کنم؟ 🌸✨');
+    pushQuick();
+  }
+}
+function pushMsg(who,text){
+  const d=document.createElement('div'); d.className='msg '+who; d.textContent=text;
+  document.getElementById('chatMsgs').appendChild(d);
+  document.getElementById('chatMsgs').scrollTop = 1e9;
+}
+function pushQuick(){
+  const w=document.createElement('div'); w.className='qq';
+  w.innerHTML = QA.map(x=>`<button onclick="quickAns('${x.q}')">💬 ${x.q}</button>`).join('');
+  document.getElementById('chatMsgs').appendChild(w);
+}
+function quickAns(q){ const f=QA.find(x=>x.q===q); pushMsg('me',q); setTimeout(()=>pushMsg('bot',f?f.a:'پیام شما دریافت شد، همکاران ما به زودی پاسخ می‌دهند.'),450); }
+function sendChat(e){
+  e.preventDefault();
+  const i=document.getElementById('chatInput'); const v=i.value.trim(); if(!v) return;
+  pushMsg('me',v); i.value='';
+  const hit = QA.find(x=>/ارسال|هزینه/.test(v)&&x.q.includes('ارسال')) || QA.find(x=>/اصل|گارانتی|ضمانت/.test(v)&&x.q.includes('اصل')) || QA.find(x=>/فروشنده|رمز|پنل/.test(v)&&x.q.includes('فروشنده'));
+  setTimeout(()=>pushMsg('bot', hit?hit.a:'پیام شما دریافت شد. در صورت تمایل شماره تماس خود را ارسال کنید تا کارشناسان نلا شاپ با شما تماس بگیرند. 💬'),500);
+}
+
+/* ================= Ticket ================= */
+function openTicket(){ document.getElementById('ticketModal').classList.remove('hide'); document.body.style.overflow='hidden'; }
+function closeTicket(){ document.getElementById('ticketModal').classList.add('hide'); document.body.style.overflow=''; }
+function submitTicket(e){
+  e.preventDefault();
+  messages.unshift({id:Date.now(),name:document.getElementById('tkName').value,contact:document.getElementById('tkContact').value,message:document.getElementById('tkMsg').value,status:'pending',date:new Date().toLocaleDateString('fa-IR')});
+  persistAll();
+  closeTicket();
+  document.getElementById('tkMsg').value='';
+  toast('پیام شما به پشتیبانی نلا شاپ ارسال شد ✅');
+}
+
+/* ================= Seller: login ================= */
+let attempts=0, lockedUntil=0;
+function openSellerLogin(){
+  if(sessionStorage.getItem(LS.s)==='1'){ showSeller(); return; }
+  document.getElementById('sellerLogin').classList.remove('hide');
+  document.getElementById('sellerLoginMsg').innerHTML='';
+  document.getElementById('sellerPw').value='';
+  setTimeout(()=>document.getElementById('sellerPw').focus(),150);
+  document.body.style.overflow='hidden';
+}
+function closeSellerLogin(){ document.getElementById('sellerLogin').classList.add('hide'); document.body.style.overflow=''; }
+async function sellerLogin(e){
+  e.preventDefault();
+  const msg = document.getElementById('sellerLoginMsg');
+  if(Date.now()<lockedUntil){
+    msg.innerHTML = `<div class="alert bad">تلاش‌های ناموفق زیاد بوده است. ${fa(Math.ceil((lockedUntil-Date.now())/1000))} ثانیه دیگر تلاش کنید.</div>`;
+    return;
+  }
+  const pw = document.getElementById('sellerPw').value.trim();
+  const h = await sha256(pw);
+  if(h===PW_HASH){
+    attempts=0; sessionStorage.setItem(LS.s,'1');
+    closeSellerLogin(); showSeller(); toast('ورود با موفقیت انجام شد. خوش آمدید! 🌸');
+  } else {
+    attempts++;
+    if(attempts>=5){ lockedUntil=Date.now()+60000; msg.innerHTML='<div class="alert bad">ورود به مدت ۶۰ ثانیه مسدود شد.</div>'; }
+    else msg.innerHTML = `<div class="alert bad">رمز عبور وارد شده صحیح نمی‌باشد. (${fa(5-attempts)} تلاش باقی مانده)</div>`;
+    document.getElementById('sellerPw').value='';
+  }
+}
+function logoutSeller(){ sessionStorage.removeItem(LS.s); document.getElementById('sellerView').classList.add('hide'); document.getElementById('storeView').classList.remove('hide'); toast('از پنل فروشنده خارج شدید'); window.scrollTo({top:0}); }
+function exitSeller(){ document.getElementById('sellerView').classList.add('hide'); document.getElementById('storeView').classList.remove('hide'); renderAll(); window.scrollTo({top:0}); }
+
+/* ================= Seller: dashboard ================= */
+function showSeller(){
+  document.getElementById('sellerView').classList.remove('hide');
+  document.getElementById('storeView').classList.add('hide');
+  window.scrollTo({top:0});
+  products.forEach(p=>{ if(ui.edits[p.id]===undefined) ui.edits[p.id]={price:p.price,originalPrice:p.originalPrice||p.price,stock:p.stock}; });
+  setSellerTab('price'); renderStats();
+}
+function setSellerTab(t){
+  ui.sellerTab=t;
+  document.querySelectorAll('.stab').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+  const c = document.getElementById('sellerTabContent');
+  if(t==='price') c.innerHTML = priceTab();
+  else if(t==='add') c.innerHTML = addTab();
+  else if(t==='orders') c.innerHTML = ordersTab();
+  else if(t==='msgs') c.innerHTML = msgsTab();
+  else c.innerHTML = guideTab();
+}
+function sellerMsg(txt, bad){
+  document.getElementById('sellerMsg').innerHTML = `<div class="alert ${bad?'bad':'ok'}">${bad?'⚠️':'✅'} ${esc(txt)}</div>`;
+  setTimeout(()=>{ document.getElementById('sellerMsg').innerHTML=''; },4000);
+}
+function renderStats(){
+  const rev = orders.reduce((s,o)=>s+o.totalAmount,0);
+  const low = products.filter(p=>p.stock<10).length;
+  document.getElementById('statCards').innerHTML = `
+    <div class="sbadge a"><div><small>تنوع محصولات</small><b>${fa(products.length)}</b></div><i>📦</i></div>
+    <div class="sbadge b"><div><small>مجموع سفارشات</small><b>${fa(orders.length)}</b></div><i>🧾</i></div>
+    <div class="sbadge c"><div><small>فروش ثبت شده</small><b style="font-size:16px">${money(rev)}</b></div><i>📈</i></div>
+    <div class="sbadge d"><div><small>موجودی کم انبار</small><b>${fa(low)}</b></div><i>⚠️</i></div>`;
+}
+function priceTab(){
+  return `<div class="card">
+    <div class="chead">
+      <div><h2>💰 ویرایش سریع قیمت و موجودی انبار</h2>
+      <p>قیمت فروش، قیمت خط‌خورده قبل از تخفیف و موجودی هر کالا را تغییر داده و دکمه «ثبت» را بزنید. درصد تخفیف خودکار محاسبه می‌شود.</p></div>
+      <div class="acts">
+        <button class="btn btn-ghost" onclick="resetSamples()">♻️ بازیابی داده‌های اولیه</button>
+      </div>
+    </div>
+    <div class="tblwrap"><table class="et">
+      <thead><tr><th>تصویر و محصول</th><th>دسته‌بندی</th><th>قیمت فروش (تومان)</th><th>قیمت اولیه (تومان)</th><th>تخفیف</th><th>موجودی</th><th>ذخیره</th><th>عملیات</th></tr></thead>
+      <tbody>${products.map(p=>{
+        const e = ui.edits[p.id] || {price:p.price,originalPrice:p.originalPrice||p.price,stock:p.stock};
+        const d = disc(e.originalPrice,e.price);
+        return `<tr>
+          <td><div class="prodcell"><img src="${p.imageUrl}" alt="" /><div><b title="${esc(p.title)}">${esc(p.title)}</b>${p.isSpecial?'<span class="pct">شگفت‌انگیز</span>':''}</div></div></td>
+          <td style="color:var(--muted);white-space:nowrap">${p.category}</td>
+          <td><input class="inp num" type="number" value="${e.price}" oninput="editField(${p.id},'price',this.value)" /></td>
+          <td><input class="inp num" type="number" value="${e.originalPrice||''}" placeholder="اختیاری" oninput="editField(${p.id},'originalPrice',this.value)" /></td>
+          <td>${d?`<span class="pct">${fa(d)}٪</span>`:'<span style="color:#94a3b8">-</span>'}</td>
+          <td><input class="inp stk ${e.stock<5?'low':''}" type="number" value="${e.stock}" oninput="editField(${p.id},'stock',this.value)" /></td>
+          <td><button class="savebtn" id="sv${p.id}" onclick="savePrice(${p.id})">💾 ثبت</button></td>
+          <td><div style="display:flex;gap:4px">
+            <button class="iconbtn e" title="ویرایش کامل" onclick="editFull(${p.id})">✏️</button>
+            <button class="iconbtn d" title="حذف" onclick="delProduct(${p.id})">🗑️</button>
+          </div></td>
+        </tr>`;}).join('')}</tbody>
+    </table></div>
+  </div>`;
+}
+function editField(id,f,v){ if(!ui.edits[id]) ui.edits[id]={}; ui.edits[id][f] = f==='stock'?Number(v):Number(v||0); }
+function savePrice(id){
+  const e = ui.edits[id]; if(!e) return;
+  const p = products.find(x=>x.id===id); if(!p) return;
+  p.price = Number(e.price)||0;
+  p.originalPrice = Number(e.originalPrice)||null;
+  if(p.originalPrice && p.originalPrice<=p.price) p.originalPrice=null;
+  p.stock = Number(e.stock)||0;
+  persistAll(); renderStats(); setSellerTab('price');
+  const b=document.getElementById('sv'+id); if(b){b.classList.add('done');b.textContent='✓ ذخیره شد';}
+  toast(`قیمت محصول «${p.title}» بروزرسانی شد`);
+}
+function delProduct(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  if(!confirm(`آیا از حذف محصول «${p.title}» اطمینان دارید؟`)) return;
+  products = products.filter(x=>x.id!==id); persistAll(); renderStats(); setSellerTab('price'); toast('محصول با موفقیت حذف شد');
+}
+function resetSamples(){
+  if(!confirm('تمامی محصولات پیش‌فرض نلا شاپ مجدداً بارگذاری شوند؟')) return;
+  products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS)); ui.edits={}; persistAll(); renderStats(); setSellerTab('price'); toast('محصولات نمونه بازیابی شدند');
+}
+let editingId=null;
+function editFull(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  editingId=id;
+  const colors = (p.colors||[]).map(c=>c.name).join(', ');
+  document.getElementById('sellerTabContent').insertAdjacentHTML('afterend', `
+  <div class="ov" id="editModal" onclick="if(event.target===this)this.remove()">
+    <div class="modal sm">
+      <button class="mx" onclick="document.getElementById('editModal').remove()">✕</button>
+      <div style="background:linear-gradient(90deg,var(--pink),#38bdf8);color:#fff;padding:18px 22px"><h3 style="font-size:15px;font-weight:900">✏️ ویرایش مشخصات کامل محصول</h3></div>
+      <form style="padding:22px" onsubmit="saveFull(event)">
+        <label class="lb">عنوان کالا:</label>
+        <input class="fld" id="efTitle" value="${esc(p.title)}" required style="margin-bottom:12px" />
+        <div class="formgrid" style="margin-bottom:12px">
+          <div><label class="lb">دسته‌بندی:</label>
+            <select class="fld" id="efCat">${CATEGORIES.map(c=>`<option ${c===p.category?'selected':''}>${c}</option>`).join('')}</select></div>
+          <div><label class="lb">موجودی انبار:</label><input class="fld" id="efStock" type="number" value="${p.stock}" /></div>
+        </div>
+        <div class="formgrid" style="margin-bottom:12px">
+          <div><label class="lb">قیمت فروش (تومان):</label><input class="fld" id="efPrice" type="number" value="${p.price}" required /></div>
+          <div><label class="lb">قیمت قبل تخفیف:</label><input class="fld" id="efOrig" type="number" value="${p.originalPrice||''}" /></div>
+        </div>
+        <label class="lb">آدرس تصویر کالا:</label>
+        <input class="fld" id="efImg" value="${esc(p.imageUrl)}" dir="ltr" style="margin-bottom:12px" />
+        <div class="thumb"><img src="${p.imageUrl}" id="efThumb" alt="" /></div>
+        <label class="lb" style="margin-top:12px">رنگ‌ها (با کاما):</label>
+        <input class="fld" id="efColors" value="${esc(colors)}" style="margin-bottom:12px" />
+        <label class="lb">توضیحات کالا:</label>
+        <textarea class="fld" id="efDesc" rows="3" style="margin-bottom:12px">${esc(p.description||'')}</textarea>
+        <label class="checkline" style="margin-bottom:14px"><input type="checkbox" id="efSpecial" ${p.isSpecial?'checked':''} /> نمایش در پیشنهاد شگفت‌انگیز نلا شاپ</label>
+        <div class="inrow">
+          <button class="btn btn-pink" style="flex:1;justify-content:center" type="submit">💾 ذخیره تغییرات</button>
+          <button class="btn btn-ghost" type="button" onclick="document.getElementById('editModal').remove()">انصراف</button>
+        </div>
+      </form>
+    </div>
+  </div>`);
+  document.getElementById('efImg').addEventListener('input', e=>{ document.getElementById('efThumb').src = e.target.value; });
+}
+function saveFull(e){
+  e.preventDefault();
+  const p = products.find(x=>x.id===editingId); if(!p) return;
+  p.title=document.getElementById('efTitle').value.trim();
+  p.category=document.getElementById('efCat').value;
+  p.stock=Number(document.getElementById('efStock').value)||0;
+  p.price=Number(document.getElementById('efPrice').value)||0;
+  p.originalPrice=Number(document.getElementById('efOrig').value)||null;
+  if(p.originalPrice && p.originalPrice<=p.price) p.originalPrice=null;
+  p.imageUrl=document.getElementById('efImg').value.trim();
+  p.description=document.getElementById('efDesc').value;
+  p.isSpecial=document.getElementById('efSpecial').checked;
+  p.colors=document.getElementById('efColors').value.split(',').map(s=>s.trim()).filter(Boolean).map(n=>({name:n,code:'#f472b6'}));
+  persistAll(); document.getElementById('editModal').remove(); renderStats(); setSellerTab('price'); renderOffers(); toast('اطلاعات محصول با موفقیت ذخیره شد');
+}
+function addTab(){
+  return `<div class="card" style="max-width:820px;margin:0 auto">
+    <div class="chead"><div><h2>➕ افزودن محصول جدید به ویترین نلا شاپ</h2><p>اطلاعات محصول جدید را وارد کنید تا بلافاصله در فروشگاه نمایش داده شود.</p></div></div>
+    <form onsubmit="addProduct(event)">
+      <label class="lb">عنوان کامل محصول *</label>
+      <input class="fld" id="npTitle" required style="margin-bottom:12px" placeholder="مثال: رژ گونه استیکی مایع شاین نلا کالکشن" />
+      <div class="formgrid" style="margin-bottom:12px">
+        <div><label class="lb">دسته‌بندی محصول *</label>
+          <select class="fld" id="npCat">${CATEGORIES.map(c=>`<option>${c}</option>`).join('')}</select></div>
+        <div><label class="lb">موجودی انبار *</label><input class="fld" id="npStock" type="number" value="15" /></div>
+      </div>
+      <div class="formgrid" style="margin-bottom:12px">
+        <div><label class="lb">قیمت فروش (تومان) *</label><input class="fld" id="npPrice" type="number" required placeholder="195000" /></div>
+        <div><label class="lb">قیمت خط‌خورده قبل از تخفیف</label><input class="fld" id="npOrig" type="number" placeholder="250000" /></div>
+      </div>
+      <label class="lb">آدرس تصویر محصول (یا از تصاویر آماده انتخاب کنید):</label>
+      <input class="fld" id="npImg" dir="ltr" value="${PRESET_IMAGES[0].url}" style="margin-bottom:8px" />
+      <div class="preset" id="npPresets">${PRESET_IMAGES.map((im,i)=>`<button type="button" class="${i===0?'on':''}" data-u="${im.url}" onclick="pickPreset(this)">${im.label}</button>`).join('')}</div>
+      <div class="thumb"><img id="npThumb" src="${PRESET_IMAGES[0].url}" alt="" /></div>
+      <label class="lb" style="margin-top:14px">رنگ‌ها / تنوع‌ها (با کاما):</label>
+      <input class="fld" id="npColors" value="صورتی پاستلی, آبی آسمانی, سفید" style="margin-bottom:12px" />
+      <label class="lb">توضیحات و ویژگی‌های محصول:</label>
+      <textarea class="fld" id="npDesc" rows="3" style="margin-bottom:12px" placeholder="توضیحات کیفیت، خواص، رایحه و مشخصات کاربردی..."></textarea>
+      <label class="checkline" style="margin-bottom:16px"><input type="checkbox" id="npSpecial" /> این محصول در بخش «پیشنهاد شگفت‌انگیز» قرار گیرد</label>
+      <button class="btn btn-pink btn-block" type="submit">➕ ثبت و انتشار محصول در فروشگاه</button>
+    </form>
+  </div>`;
+}
+function pickPreset(btn){ document.getElementById('npImg').value=btn.dataset.u; document.getElementById('npThumb').src=btn.dataset.u;
+  document.querySelectorAll('#npPresets button').forEach(b=>b.classList.toggle('on',b===btn)); }
+function addProduct(e){
+  e.preventDefault();
+  const g=id=>document.getElementById(id).value;
+  const price=Number(g('npPrice'))||0, orig=Number(g('npOrig'))||null;
+  const p = {
+    id: Date.now(),
+    title: g('npTitle').trim(),
+    category: g('npCat'),
+    price,
+    originalPrice: (orig && orig>price) ? orig : null,
+    stock: Number(g('npStock'))||0,
+    imageUrl: g('npImg').trim() || PRESET_IMAGES[0].url,
+    description: g('npDesc'),
+    isSpecial: document.getElementById('npSpecial').checked,
+    salesCount: 0, rating: 5, reviewCount: 1,
+    colors: g('npColors').split(',').map(s=>s.trim()).filter(Boolean).map(n=>({name:n,code:'#f472b6'})),
+    specs: [{key:'وضعیت',value:'جدید و اورجینال نلا شاپ'},{key:'ارسال',value:'پست پیشتاز / پیک تهران'}]
+  };
+  products.unshift(p); ui.edits[p.id]={price:p.price,originalPrice:p.originalPrice||p.price,stock:p.stock};
+  persistAll(); renderStats(); toast(`محصول «${p.title}» با موفقیت به ویترین افزوده شد ✨`);
+  setSellerTab('price');
+}
+function ordersTab(){
+  if(!orders.length) return `<div class="card"><div class="empty"><i>📦</i><h3>هنوز سفارشی ثبت نشده است</h3><p>سفارشات خریداران پس از ثبت در فروشگاه در این بخش نمایش داده می‌شوند.</p></div></div>`;
+  return `<div class="card">
+    <div class="chead"><div><h2>📦 مدیریت سفارشات خریداران</h2><p>وضعیت سفارشات را از زمان ثبت تا تحویل به مشتری پیگیری و تغییر دهید.</p></div></div>
+    ${orders.map((o,i)=>`<div class="ocard2">
+      <div class="oh">
+        <div class="cd">
+          <b class="code">${o.orderNumber}</b>
+          <b>${esc(o.customerName)}</b>
+          <span style="color:var(--muted);font-size:11px" dir="ltr">${esc(o.customerPhone)}</span>
+        </div>
+        <div class="cd">
+          <span style="font-size:11px;color:var(--muted)">وضعیت:</span>
+          <select onchange="setOrderStatus(${i},this.value)">
+            <option value="processing" ${o.status==='processing'?'selected':''}>ثبت اولیه (در حال بررسی)</option>
+            <option value="preparing" ${o.status==='preparing'?'selected':''}>در حال بسته‌بندی</option>
+            <option value="shipped" ${o.status==='shipped'?'selected':''}>تحویل داده شده به پست</option>
+            <option value="delivered" ${o.status==='delivered'?'selected':''}>تحویل داده شده به خریدار</option>
+            <option value="cancelled" ${o.status==='cancelled'?'selected':''}>لغو شده</option>
+          </select>
+        </div>
+      </div>
+      <div class="tags" style="margin-bottom:9px">${(o.items||[]).map(it=>`<span>${esc(it.title)} (${fa(it.quantity)} عدد)</span>`).join('')}</div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)">
+        <div>📍 ${esc(o.customerAddress)} ${o.notes?`<div style="color:var(--pink);margin-top:3px">📝 ${esc(o.notes)}</div>`:''}</div>
+        <b style="color:var(--pink);font-size:14px">مبلغ: ${money(o.totalAmount)}</b>
+      </div>
+    </div>`).join('')}
+  </div>`;
+}
+function setOrderStatus(i,s){ orders[i].status=s; persistAll(); toast('وضعیت سفارش بروزرسانی شد'); }
+function msgsTab(){
+  if(!messages.length) return `<div class="card"><div class="empty"><i>💬</i><h3>هیچ پیام پشتیبانی دریافت نشده است</h3><p>پیام‌هایی که خریداران از طریق چت آنلاین یا فرم تیکت ارسال کنند اینجا نمایش داده می‌شود.</p></div></div>`;
+  return `<div class="card">
+    <div class="chead"><div><h2>💬 پیام‌ها و تیکت‌های پشتیبانی خریداران</h2><p>پیام‌هایی که خریداران در بخش پشتیبانی آنلاین سایت ارسال کرده‌اند.</p></div></div>
+    ${messages.map(m=>`<div class="ocard2">
+      <div class="oh"><div class="cd"><b>${esc(m.name)}</b><span style="color:var(--muted);font-size:11px" dir="ltr">${esc(m.contact)}</span></div><span style="font-size:10px;color:#94a3b8">${esc(m.date||'')}</span></div>
+      <p style="background:#fff;border:1px solid var(--pink-l2);border-radius:12px;padding:10px;font-size:12px">${esc(m.message)}</p>
+    </div>`).join('')}
+  </div>`;
+}
+function guideTab(){
+  return `<div class="card" style="background:linear-gradient(135deg,#fff,var(--pink-l))">
+    <div class="chead"><div style="display:flex;align-items:center;gap:12px">
+      <div class="ic" style="width:48px;height:48px;border-radius:16px;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:23px">🏪</div>
+      <div><h2>📖 دفترچه راهنمای تحویل فروشگاه NELLA_SHOPP به فروشنده</h2><p>تمام اطلاعات لازم جهت مدیریت کامل محصولات و قیمت‌ها</p></div>
+    </div></div>
+    <div class="guide">
+      <div class="gbox a"><h4>🔑 امنیت و رمز ورود پنل</h4><p>ورود به این بخش با رمز عبور اختصاصی مدیریت محافظت می‌شود و رمز در هیچ‌کجای سایت نمایش داده نمی‌شود. پس از ۵ تلاش ناموفق، ورود به مدت ۶۰ ثانیه مسدود می‌گردد. برای خروج از دکمه «خروج از پنل» استفاده کنید.</p></div>
+      <div class="gbox b"><h4>💰 نحوه تغییر سریع قیمت کالاها</h4><p>در تب «ویرایش قیمت و موجودی»، داخل کادر قیمت هر محصول قیمت جدید را تایپ و دکمه «ثبت» را بزنید. درصد تخفیف به‌صورت خودکار محاسبه و در فروشگاه اعمال می‌شود.</p></div>
+      <div class="gbox a"><h4>➕ افزودن محصولات جدید</h4><p>از تب «افزودن محصول جدید» عنوان، دسته‌بندی، قیمت، تصویر دلخواه یا تصاویر پیشنهادی را انتخاب و ثبت کنید تا بلافاصله به ویترین فروشگاه اضافه شود.</p></div>
+      <div class="gbox b"><h4>🚚 پیگیری سفارشات خریداران</h4><p>سفارشات مشتریان در تب «سفارشات خریداران» قابل مدیریت است. هر خریدار کد پیگیری نلا (NEL-XXXXX) دریافت می‌کند که می‌تواند در صفحه اصلی فروشگاه آن را رهگیری کند.</p></div>
+    </div>
+    <div class="alert info" style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <span>🌸 فروشگاه شما آماده استفاده و شروع فروش می‌باشد!</span>
+      <button class="btn btn-pink" onclick="exitSeller()">مشاهده ویترین آنلاین</button>
+    </div>
+  </div>`;
+}
+
+/* ================= Boot ================= */
+function renderAll(){ renderNav(); renderCats(); renderSlide(); renderOffers(); renderProducts(); renderCartBadge(); renderCartBody(); }
+renderAll();
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closePd(); closeCart(); closeTracker(); closeSellerLogin(); closeTicket(); }});
+</script>
+</body>
+</html>
